@@ -1,0 +1,1674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Triweave Print Xpress — Wear Your Story</title>
+  <meta name="description" content="Custom T-shirt printing in Chennai. DTF, Screen Print, Sublimation & more. Your design, perfectly printed." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg:        #f5f2ed;
+      --surface:   #ffffff;
+      --surface2:  #eceae5;
+      --cyan:      #0097b2;
+      --cyan-dim:  #006d82;
+      --cyan-glow: rgba(0,151,178,0.15);
+      --ink:       #1a1a1a;
+      --muted:     #7a7a7a;
+      --border:    #dbd8d2;
+      --font-disp: 'Bebas Neue', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'Space Mono', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* NOISE OVERLAY */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.45;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 5vw;
+      background: rgba(245,242,237,0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    nav.scrolled { box-shadow: 0 2px 24px rgba(0,0,0,0.06); }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+    .nav-logo-img {
+      width: 38px; height: 38px;
+      object-fit: contain;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .nav-logo-text {
+      font-family: var(--font-disp);
+      font-size: 1.35rem;
+      letter-spacing: 0.08em;
+      color: var(--ink);
+      line-height: 1;
+    }
+    .nav-logo-text span { color: var(--cyan); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--cyan); }
+    .nav-cta {
+      background: var(--cyan);
+      color: #000 !important;
+      padding: 0.5rem 1.25rem;
+      font-weight: 700 !important;
+      clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+      transition: background 0.2s, transform 0.2s !important;
+    }
+    .nav-cta:hover { background: #00b8d4 !important; transform: translateY(-1px); }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--ink);
+      transition: 0.3s;
+    }
+
+    /* ══════════════════════════════════════════
+       HERO — PRODUCT ORIENTED
+    ══════════════════════════════════════════ */
+    #hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 100px 5vw 60px;
+      gap: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Animated BG gradient blobs */
+    .hero-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+    }
+    .hero-blob-1 {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(0,151,178,0.10) 0%, transparent 70%);
+      top: -100px; right: -100px;
+      animation: blobFloat 8s ease-in-out infinite;
+    }
+    .hero-blob-2 {
+      width: 350px; height: 350px;
+      background: radial-gradient(circle, rgba(0,151,178,0.06) 0%, transparent 70%);
+      bottom: 50px; left: -80px;
+      animation: blobFloat 11s ease-in-out infinite reverse;
+    }
+    @keyframes blobFloat {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33%       { transform: translate(20px, -30px) scale(1.05); }
+      66%       { transform: translate(-10px, 20px) scale(0.95); }
+    }
+
+    /* Floating particles */
+    .particles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .particle {
+      position: absolute;
+      width: 4px; height: 4px;
+      background: var(--cyan);
+      border-radius: 50%;
+      opacity: 0;
+      animation: particleFly var(--dur, 6s) var(--delay, 0s) ease-in-out infinite;
+    }
+    @keyframes particleFly {
+      0%   { opacity: 0; transform: translate(0, 0) scale(0.5); }
+      20%  { opacity: 0.6; }
+      80%  { opacity: 0.4; }
+      100% { opacity: 0; transform: translate(var(--dx, 60px), var(--dy, -120px)) scale(1.5); }
+    }
+
+    /* Scanning line */
+    .scan-line {
+      position: absolute;
+      left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+      opacity: 0.25;
+      animation: scanMove 5s linear infinite;
+      pointer-events: none;
+    }
+    @keyframes scanMove {
+      0%   { top: 100px; opacity: 0; }
+      10%  { opacity: 0.25; }
+      90%  { opacity: 0.25; }
+      100% { top: 100vh; opacity: 0; }
+    }
+
+    /* HERO TEXT */
+    .hero-content { position: relative; z-index: 2; }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      border: 1px solid rgba(0,151,178,0.35);
+      padding: 0.35rem 0.85rem;
+      margin-bottom: 1.5rem;
+      background: rgba(0,151,178,0.05);
+      animation: fadeSlideUp 0.8s ease both;
+    }
+    .hero-badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--cyan);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.4; transform: scale(0.6); }
+    }
+
+    .hero-title {
+      font-family: var(--font-disp);
+      font-size: clamp(3.8rem, 7.5vw, 7.5rem);
+      line-height: 0.92;
+      letter-spacing: 0.02em;
+      margin-bottom: 1.5rem;
+    }
+    .hero-title .line {
+      display: block;
+      overflow: hidden;
+    }
+    .hero-title .line-inner {
+      display: block;
+      animation: slideUpReveal 0.9s cubic-bezier(0.16,1,0.3,1) both;
+    }
+    .hero-title .line:nth-child(1) .line-inner { animation-delay: 0.1s; }
+    .hero-title .line:nth-child(2) .line-inner { animation-delay: 0.22s; color: var(--cyan); }
+    .hero-title .line:nth-child(3) .line-inner { animation-delay: 0.34s; }
+    @keyframes slideUpReveal {
+      from { transform: translateY(100%); opacity: 0; }
+      to   { transform: translateY(0);    opacity: 1; }
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: #5a5a5a;
+      max-width: 400px;
+      margin-bottom: 2.5rem;
+      line-height: 1.85;
+      animation: fadeSlideUp 0.9s ease 0.5s both;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      animation: fadeSlideUp 0.9s ease 0.6s both;
+    }
+    .hero-tag {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.65rem;
+      background: var(--surface);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .hero-tag:hover { border-color: var(--cyan); color: var(--cyan); }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      animation: fadeSlideUp 0.9s ease 0.7s both;
+    }
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--cyan);
+      color: #000;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.9rem 2.2rem;
+      clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-primary:hover {
+      background: #00b8d4;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0,151,178,0.35);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      color: var(--ink);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.9rem 2rem;
+      border: 1px solid var(--border);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--cyan); color: var(--cyan); }
+
+    /* ══════════════════════════════════════════
+       360° T-SHIRT ROTATION SHOWCASE
+    ══════════════════════════════════════════ */
+    .hero-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+      animation: fadeSlideUp 1s ease 0.3s both;
+    }
+
+    .tshirt-stage {
+      position: relative;
+      width: 420px;
+      height: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Outer orbiting ring */
+    .orbit-ring {
+      position: absolute;
+      inset: -30px;
+      border-radius: 50%;
+      border: 1px dashed rgba(0,151,178,0.2);
+      animation: orbitSpin 20s linear infinite;
+    }
+    .orbit-ring::before {
+      content: '';
+      position: absolute;
+      top: -5px; left: 50%;
+      transform: translateX(-50%);
+      width: 10px; height: 10px;
+      background: var(--cyan);
+      border-radius: 50%;
+      box-shadow: 0 0 12px var(--cyan);
+    }
+    @keyframes orbitSpin { to { transform: rotate(360deg); } }
+
+    /* Inner glow ring */
+    .glow-ring {
+      position: absolute;
+      width: 340px; height: 340px;
+      border-radius: 50%;
+      background: conic-gradient(from 0deg, var(--cyan), rgba(0,151,178,0.1), var(--cyan-dim), rgba(0,151,178,0.05), var(--cyan));
+      animation: spin 4s linear infinite;
+      -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #fff 0);
+              mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #fff 0);
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Inner glow aura */
+    .tshirt-aura {
+      position: absolute;
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,151,178,0.12) 0%, transparent 70%);
+      animation: auraBreath 3s ease-in-out infinite;
+    }
+    @keyframes auraBreath {
+      0%, 100% { transform: scale(1);    opacity: 0.8; }
+      50%       { transform: scale(1.15); opacity: 0.4; }
+    }
+
+    /* THE T-SHIRT SVG CONTAINER */
+    .tshirt-wrapper {
+      position: relative;
+      width: 280px;
+      height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      perspective: 800px;
+    }
+
+    .tshirt-3d {
+      width: 240px;
+      animation: tshirt360 6s linear infinite;
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.18));
+      transform-style: preserve-3d;
+    }
+    @keyframes tshirt360 {
+      0%   { transform: rotateY(0deg)   scaleX(1);  }
+      12%  { transform: rotateY(43deg)  scaleX(0.93); }
+      25%  { transform: rotateY(90deg)  scaleX(0.12); }
+      37%  { transform: rotateY(133deg) scaleX(0.93); }
+      50%  { transform: rotateY(180deg) scaleX(1);  }
+      62%  { transform: rotateY(223deg) scaleX(0.93); }
+      75%  { transform: rotateY(270deg) scaleX(0.12); }
+      87%  { transform: rotateY(317deg) scaleX(0.93); }
+      100% { transform: rotateY(360deg) scaleX(1);  }
+    }
+
+    /* Front face SVG — shown when scaleX > 0 and 0-180deg */
+    .tshirt-front, .tshirt-back {
+      position: absolute;
+      top: 0; left: 0;
+      width: 240px;
+      transition: opacity 0.1s;
+    }
+
+    /* Floating label on tshirt */
+    .tshirt-label {
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      white-space: nowrap;
+      animation: labelFlicker 6s linear infinite;
+    }
+    @keyframes labelFlicker {
+      0%, 49%  { content: 'FRONT VIEW'; }
+      50%, 100% { content: 'BACK VIEW'; }
+    }
+
+    /* Side callout tags */
+    .tshirt-callout {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      opacity: 0;
+      animation: calloutAppear 6s ease-in-out infinite;
+    }
+    .tshirt-callout::before {
+      content: '';
+      width: 30px; height: 1px;
+      background: var(--border);
+    }
+    .tshirt-callout.c1 { top: 25%; right: -90px; animation-delay: 0s; }
+    .tshirt-callout.c2 { top: 50%; right: -110px; animation-delay: 0.3s; }
+    .tshirt-callout.c3 { top: 70%; right: -80px;  animation-delay: 0.6s; }
+    .tshirt-callout.c-left { left: -100px; flex-direction: row-reverse; animation-delay: 0.9s; }
+    .tshirt-callout.c-left::before { order: 0; }
+    @keyframes calloutAppear {
+      0%, 10%   { opacity: 0; transform: translateX(8px); }
+      20%, 80%  { opacity: 1; transform: translateX(0); }
+      90%, 100% { opacity: 0; transform: translateX(-8px); }
+    }
+
+    /* Floating mini badges around the shirt */
+    .float-badge {
+      position: absolute;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 0.35rem 0.7rem;
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink);
+      white-space: nowrap;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+    .float-badge.fb1 {
+      top: 15px; left: -20px;
+      animation: floatUpDown 4s ease-in-out infinite;
+    }
+    .float-badge.fb2 {
+      bottom: 60px; right: -25px;
+      animation: floatUpDown 5s ease-in-out 1s infinite;
+    }
+    .float-badge.fb3 {
+      bottom: 5px; left: 10px;
+      animation: floatUpDown 3.5s ease-in-out 0.5s infinite;
+    }
+    @keyframes floatUpDown {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-8px); }
+    }
+
+    /* Color picker dots below */
+    .tshirt-colors {
+      position: absolute;
+      bottom: -60px;
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+    }
+    .color-dot {
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .color-dot:hover, .color-dot.active {
+      transform: scale(1.3);
+      border-color: var(--cyan);
+    }
+    .color-dot.d1 { background: #ffffff; box-shadow: 0 0 0 1px var(--border); }
+    .color-dot.d2 { background: #1a1a1a; }
+    .color-dot.d3 { background: #0097b2; }
+    .color-dot.d4 { background: #c0392b; }
+    .color-dot.d5 { background: #2ecc71; }
+
+    /* TICKER */
+    .ticker {
+      background: var(--cyan);
+      overflow: hidden;
+      padding: 0.6rem 0;
+    }
+    .ticker-inner {
+      display: flex;
+      width: max-content;
+      animation: ticker 22s linear infinite;
+    }
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .ticker-item {
+      font-family: var(--font-disp);
+      font-size: 1rem;
+      letter-spacing: 0.15em;
+      color: #000;
+      padding: 0 2rem;
+      white-space: nowrap;
+    }
+    .ticker-dot { color: rgba(0,0,0,0.35); margin: 0 0.5rem; }
+
+    /* SECTIONS */
+    section { padding: 100px 5vw; }
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: var(--font-disp);
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 1;
+      letter-spacing: 0.02em;
+      margin-bottom: 1.5rem;
+    }
+
+    /* PRODUCT SHOWCASE — horizontal scroll strip */
+    #products {
+      border-top: 1px solid var(--border);
+      overflow: hidden;
+      padding-bottom: 60px;
+    }
+    .products-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .products-strip {
+      display: flex;
+      gap: 1.5rem;
+      overflow-x: auto;
+      padding-bottom: 1rem;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: thin;
+      scrollbar-color: var(--cyan) transparent;
+    }
+    .products-strip::-webkit-scrollbar { height: 3px; }
+    .products-strip::-webkit-scrollbar-track { background: var(--border); }
+    .products-strip::-webkit-scrollbar-thumb { background: var(--cyan); }
+
+    .product-card {
+      flex: 0 0 280px;
+      scroll-snap-align: start;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    }
+    .product-img {
+      height: 220px;
+      background: var(--surface2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+    .product-img svg { transition: transform 0.5s ease; }
+    .product-card:hover .product-img svg { transform: scale(1.06) rotate(-2deg); }
+
+    .product-tag {
+      position: absolute;
+      top: 12px; right: 12px;
+      background: var(--cyan);
+      color: #000;
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.5rem;
+    }
+    .product-info {
+      padding: 1.25rem;
+    }
+    .product-name {
+      font-family: var(--font-disp);
+      font-size: 1.3rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.35rem;
+    }
+    .product-desc {
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    .product-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .product-from {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      color: var(--cyan);
+    }
+    .product-dots {
+      display: flex;
+      gap: 4px;
+    }
+    .product-dots span {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      display: block;
+    }
+
+    /* ABOUT */
+    #about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      border-top: 1px solid var(--border);
+    }
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+    .stat-box {
+      background: var(--surface);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      transition: background 0.2s;
+    }
+    .stat-box:hover { background: var(--surface2); }
+    .stat-num {
+      font-family: var(--font-disp);
+      font-size: 3rem;
+      color: var(--cyan);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-family: var(--font-mono);
+      letter-spacing: 0.1em;
+    }
+    .about-text p {
+      color: #555;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+      line-height: 1.9;
+    }
+
+    /* SERVICES */
+    #services { border-top: 1px solid var(--border); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+    .service-card {
+      background: var(--surface);
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: background 0.3s, transform 0.3s;
+      cursor: default;
+    }
+    .service-card:hover { background: var(--surface2); transform: translateY(-3px); }
+    .service-icon {
+      width: 48px; height: 48px;
+      background: rgba(0,151,178,0.08);
+      border: 1px solid rgba(0,151,178,0.25);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+    }
+    .service-name {
+      font-family: var(--font-disp);
+      font-size: 1.4rem;
+      letter-spacing: 0.05em;
+    }
+    .service-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.7; }
+
+    /* GALLERY */
+    #gallery { border-top: 1px solid var(--border); }
+    .gallery-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 12px;
+    }
+    .g-item:nth-child(1) { grid-column: span 5; grid-row: span 2; }
+    .g-item:nth-child(2) { grid-column: span 4; }
+    .g-item:nth-child(3) { grid-column: span 3; }
+    .g-item:nth-child(4) { grid-column: span 4; }
+    .g-item:nth-child(5) { grid-column: span 3; }
+    .g-item:nth-child(6) { grid-column: span 4; grid-row: span 2; }
+    .g-item:nth-child(7) { grid-column: span 4; }
+    .g-item:nth-child(8) { grid-column: span 4; }
+    .g-item:nth-child(9) { grid-column: span 4; }
+    .g-item:nth-child(10) { grid-column: span 4; }
+
+    .g-item {
+      overflow: hidden;
+      position: relative;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      min-height: 220px;
+    }
+    .g-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+    .g-item:hover img { transform: scale(1.05); }
+    .g-item-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0) 0%, transparent 60%);
+      opacity: 0; transition: opacity 0.3s;
+      display: flex; align-items: flex-end; padding: 1.5rem;
+    }
+    .g-item:hover .g-item-overlay { opacity: 1; }
+    .g-item-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--cyan);
+    }
+
+    /* WHY US */
+    #why { border-top: 1px solid var(--border); background: var(--surface); }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+    .why-item { display: flex; flex-direction: column; gap: 0.75rem; }
+    .why-num { font-family: var(--font-disp); font-size: 4rem; color: var(--border); line-height: 1; }
+    .why-title { font-family: var(--font-disp); font-size: 1.3rem; letter-spacing: 0.04em; }
+    .why-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.8; }
+
+    /* CONTACT */
+    #contact { border-top: 1px solid var(--border); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+      margin-top: 3rem;
+    }
+    .contact-info { display: flex; flex-direction: column; gap: 2rem; }
+    .contact-item { display: flex; gap: 1.25rem; align-items: flex-start; }
+    .contact-icon {
+      width: 44px; height: 44px;
+      background: rgba(0,151,178,0.08);
+      border: 1px solid rgba(0,151,178,0.25);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0; margin-top: 2px;
+    }
+    .contact-item-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 0.35rem;
+    }
+    .contact-item-value { font-size: 0.95rem; color: var(--ink); line-height: 1.6; }
+    .contact-item-value a { color: var(--cyan); text-decoration: none; }
+    .contact-item-value a:hover { text-decoration: underline; }
+
+    .contact-form { display: flex; flex-direction: column; gap: 1.25rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+    .form-group label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted);
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      padding: 0.75rem 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+      resize: vertical;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus { border-color: var(--cyan); }
+    .form-group select option { background: var(--surface); }
+
+    .form-submit {
+      background: var(--cyan); color: #000;
+      font-family: var(--font-mono);
+      font-size: 0.8rem; font-weight: 700;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      border: none; padding: 1rem 2rem;
+      cursor: pointer;
+      clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      width: 100%;
+    }
+    .form-submit:hover {
+      background: #00eeff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,151,178,0.3);
+    }
+
+    .map-wrap {
+      margin-top: 5rem;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      height: 320px;
+    }
+    .map-wrap iframe { width: 100%; height: 100%; border: none; }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 5vw;
+      display: flex; align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-logo { font-family: var(--font-disp); font-size: 1.2rem; letter-spacing: 0.1em; }
+    .footer-logo span { color: var(--cyan); }
+    .footer-copy { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.1em; color: var(--muted); }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a {
+      font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--cyan); }
+
+    /* MOBILE NAV */
+    .mobile-nav {
+      display: none;
+      position: fixed; top: 0; right: 0; bottom: 0;
+      width: 280px;
+      background: var(--surface);
+      border-left: 1px solid var(--border);
+      z-index: 200;
+      padding: 5rem 2rem 2rem;
+      flex-direction: column; gap: 2rem;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+    }
+    .mobile-nav.open { display: flex; transform: translateX(0); }
+    .mobile-nav a {
+      font-family: var(--font-disp); font-size: 1.8rem; letter-spacing: 0.05em;
+      color: var(--ink); text-decoration: none; transition: color 0.2s;
+    }
+    .mobile-nav a:hover { color: var(--cyan); }
+    .mobile-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.7); z-index: 190;
+    }
+    .mobile-overlay.open { display: block; }
+
+    /* SCROLL REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      #hero { grid-template-columns: 1fr; padding-top: 100px; }
+      .hero-visual { margin-top: 2rem; }
+      .tshirt-stage { width: 300px; height: 360px; }
+      .tshirt-3d { width: 180px; }
+      .glow-ring { width: 260px; height: 260px; }
+      .tshirt-callout { display: none; }
+      #about { grid-template-columns: 1fr; gap: 3rem; }
+      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .g-item { grid-column: span 1 !important; grid-row: span 1 !important; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+    }
+    @media (max-width: 560px) {
+      .form-row { grid-template-columns: 1fr; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="mainNav">
+    <a href="#" class="nav-logo">
+      <!-- LOGO PLACEHOLDER — replace img src when ready -->
+      <img src="https://res.cloudinary.com/dpaxjxw3z/image/upload/q_auto/f_auto/v1779181349/logo_resized_ntkzkz.png" alt="Triweave Logo" class="nav-logo-img" />
+      <span class="nav-logo-text">TRIWEAVE <span>XPRESS</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#products">Products</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+    </ul>
+    <button class="hamburger" id="menuBtn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="#products" class="mobile-link">Products</a>
+    <a href="#services" class="mobile-link">Services</a>
+    <a href="#gallery"  class="mobile-link">Gallery</a>
+    <a href="#about"    class="mobile-link">About</a>
+    <a href="#contact"  class="mobile-link">Contact</a>
+  </nav>
+
+  <!-- ══ HERO ══ -->
+  <section id="hero">
+    <!-- BG FX -->
+    <div class="hero-blob hero-blob-1"></div>
+    <div class="hero-blob hero-blob-2"></div>
+    <div class="scan-line"></div>
+    <div class="particles" id="particles"></div>
+
+    <!-- LEFT: COPY -->
+    <div class="hero-content">
+      <div class="hero-badge">Wear Your Story · Chennai</div>
+
+      <h1 class="hero-title">
+        <span class="line"><span class="line-inner">YOUR</span></span>
+        <span class="line"><span class="line-inner">DESIGN.</span></span>
+        <span class="line"><span class="line-inner">PERFECTLY</span></span>
+        <span class="line"><span class="line-inner" style="animation-delay:0.46s">PRINTED.</span></span>
+      </h1>
+
+      <p class="hero-sub">
+        From concept to wearable art. Custom T-shirts printed with precision — for individuals, crews, events & brands. Every stitch, every color, every detail counts.
+      </p>
+
+      <div class="hero-tags">
+        <span class="hero-tag">DTF Print</span>
+        <span class="hero-tag">Screen Print</span>
+        
+        <span class="hero-tag">Bulk Orders</span>
+        <span class="hero-tag">MOQ: 1 Piece</span>
+        <span class="hero-tag">24H Samples</span>
+      </div>
+
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">→ Design Now</a>
+        <a href="#products" class="btn-secondary">Explore Products</a>
+      </div>
+    </div>
+
+    <!-- RIGHT: 360° T-SHIRT -->
+    <div class="hero-visual">
+      <div class="tshirt-stage">
+        <div class="orbit-ring"></div>
+        <div class="glow-ring"></div>
+        <div class="tshirt-aura"></div>
+
+        <div class="tshirt-wrapper">
+          <!-- 360° ROTATING T-SHIRT SVG -->
+          <svg class="tshirt-3d" id="tshirtSvg" viewBox="0 0 240 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Shadow base -->
+            <ellipse cx="120" cy="252" rx="72" ry="6" fill="rgba(0,0,0,0.10)"/>
+
+            <!-- SHIRT BODY — colour changes via JS -->
+            <path id="shirtBody" d="
+              M60 52 L20 88 L44 108 L44 240 L196 240 L196 108 L220 88 L180 52
+              C180 52 165 76 120 76 C75 76 60 52 60 52 Z
+            " fill="#ffffff" stroke="#ddd" stroke-width="1.5"/>
+
+            <!-- Collar -->
+            <path d="M92 52 Q120 80 148 52" fill="none" stroke="#ccc" stroke-width="2"/>
+            <path d="M92 52 Q120 68 148 52" fill="rgba(0,0,0,0.04)"/>
+
+            <!-- Sleeves -->
+            <path d="M60 52 L20 88 L44 108 L60 92 Z" fill="#f0f0f0" stroke="#ddd" stroke-width="1"/>
+            <path d="M180 52 L220 88 L196 108 L180 92 Z" fill="#f0f0f0" stroke="#ddd" stroke-width="1"/>
+
+            <!-- Sleeve seam lines -->
+            <line x1="52" y1="62" x2="32" y2="96" stroke="rgba(0,0,0,0.07)" stroke-width="1"/>
+            <line x1="188" y1="62" x2="208" y2="96" stroke="rgba(0,0,0,0.07)" stroke-width="1"/>
+
+            <!-- Design print area -->
+            <rect id="printArea" x="72" y="105" width="96" height="80" rx="4" fill="rgba(0,0,0,0.03)"/>
+
+            <!-- TRIWEAVE logo print -->
+            <g id="shirtPrint">
+              <image 
+                href="https://res.cloudinary.com/dpaxjxw3z/image/upload/q_auto/f_auto/v1779181349/logo_resized_ntkzkz.png" 
+                x="80" 
+                y="105" 
+                width="80" 
+                height="80"
+                preserveAspectRatio="xMidYMid meet"
+              />
+            </g>
+
+            <!-- Shirt stitch lines -->
+            <line x1="120" y1="76" x2="120" y2="240" stroke="rgba(0,0,0,0.04)" stroke-width="1" stroke-dasharray="4 4"/>
+            <line x1="44" y1="108" x2="196" y2="108" stroke="rgba(0,0,0,0.05)" stroke-width="1"/>
+
+            <!-- Hem line -->
+            <line x1="44" y1="235" x2="196" y2="235" stroke="rgba(0,0,0,0.06)" stroke-width="1"/>
+          </svg>
+
+          <!-- Callout tags -->
+          <div class="tshirt-callout c1">DTF Print</div>
+          <div class="tshirt-callout c2">Premium Cotton</div>
+          <div class="tshirt-callout c3">Wash-Safe Ink</div>
+          <div class="tshirt-callout c-left" style="top:40%; left:-120px">Custom Design</div>
+
+          <!-- Color picker -->
+          <div class="tshirt-colors">
+            <span class="color-dot d1 active" data-color="#ffffff" data-stroke="#dbd8d2" onclick="changeColor(this)"></span>
+            <span class="color-dot d2"         data-color="#1a1a1a" data-stroke="#333"    onclick="changeColor(this)"></span>
+            <span class="color-dot d3"         data-color="#0097b2" data-stroke="#007a96" onclick="changeColor(this)"></span>
+            <span class="color-dot d4"         data-color="#c0392b" data-stroke="#a93226" onclick="changeColor(this)"></span>
+            <span class="color-dot d5"         data-color="#1a7a4a" data-stroke="#166038" onclick="changeColor(this)"></span>
+          </div>
+        </div>
+
+        <!-- Floating badges -->
+        <div class="float-badge fb1">✦ 100% Cotton</div>
+        <div class="float-badge fb2">Wash Proof ✓</div>
+        <div class="float-badge fb3">From ₹199</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="ticker-inner">
+      <span class="ticker-item">YOUR DESIGN<span class="ticker-dot">◆</span></span>
+      <span class="ticker-item">DTF PRINTING<span class="ticker-dot">◆</span></span>
+      <span class="ticker-item">SCREEN PRINTING<span class="ticker-dot">◆</span></span>
+      
+      <span class="ticker-item">BULK ORDERS<span class="ticker-dot">◆</span></span>
+      <span class="ticker-item">CUSTOM DESIGNS<span class="ticker-dot">◆</span></span>
+      <span class="ticker-item">FAST DELIVERY<span class="ticker-dot">◆</span></span>
+      <span class="ticker-item">MOQ 1 PIECE<span class="ticker-dot">◆</span></span>
+      <span class="ticker-item">YOUR DESIGN<span class="ticker-dot">◆</span></span>
+      <span class="ticker-item">DTF PRINTING<span class="ticker-dot">◆</span></span>
+      <span class="ticker-item">SCREEN PRINTING<span class="ticker-dot">◆</span></span>
+      <span class="ticker-item">SUBLIMATION<span class="ticker-dot">◆</span></span>
+      <span class="ticker-item">BULK ORDERS<span class="ticker-dot">◆</span></span>
+      <span class="ticker-item">CUSTOM DESIGNS<span class="ticker-dot">◆</span></span>
+      <span class="ticker-item">FAST DELIVERY<span class="ticker-dot">◆</span></span>
+      <span class="ticker-item">MOQ 1 PIECE<span class="ticker-dot">◆</span></span>
+    </div>
+  </div>
+
+  <!-- ══ PRODUCTS ══ -->
+  <section id="products">
+    <div class="products-header reveal">
+      <div>
+        <div class="section-label">// 01 — Products</div>
+        <h2 class="section-title">Shop The Look.</h2>
+      </div>
+      <a href="#contact" class="btn-secondary">Order Any Style →</a>
+    </div>
+
+    <div class="products-strip reveal">
+
+      <!-- Card 1 -->
+      <div class="product-card">
+        <div class="product-img">
+          <span class="product-tag">Best Seller</span>
+          <img src="https://res.cloudinary.com/dpaxjxw3z/image/upload/q_auto/f_auto/v1779183521/Untitled_design-removebg-preview_s8kulx.png" alt="Classic Crew Tee" />
+        </div>
+        <div class="product-info">
+          <div class="product-name">CLASSIC CREW</div>
+          <div class="product-desc">Premium 200gsm round-neck. Perfect for DTF, Screen & Sublimation prints.</div>
+          <div class="product-meta">
+            <span class="product-from">From ₹249</span>
+            <div class="product-dots">
+              <span style="background:#0097b2"></span>
+              <span style="background:#1a1a1a"></span>
+              <span style="background:#fff;border:1px solid #ddd"></span>
+              <span style="background:#c0392b"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="product-card">
+        <div class="product-img">
+          
+          <img src="https://res.cloudinary.com/dpaxjxw3z/image/upload/v1779179560/1_gcbz73-removebg-preview_miiqfg.png" alt="Classic Crew Tee" />
+        </div>
+        <div class="product-info">
+          <div class="product-name">EVENT TEE</div>
+          <div class="product-desc">Bold branding for events, college fests & brand campaigns. MOQ: 10 pcs.</div>
+          <div class="product-meta">
+            <span class="product-from">From ₹199</span>
+            <div class="product-dots">
+              <span style="background:#1a1a1a"></span>
+              <span style="background:#0097b2"></span>
+              <span style="background:#c0392b"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="product-card">
+        <div class="product-img">
+          <span class="product-tag">Best Seller</span>
+          <img src="https://res.cloudinary.com/dpaxjxw3z/image/upload/q_auto/f_auto/v1779183723/Untitled_design__1_-removebg-preview_ggldkr.png" alt="Classic Crew Tee" />
+        </div>
+        <div class="product-info">
+          <div class="product-name">POLO SHIRT</div>
+          <div class="product-desc">Corporate-grade polo with embroidered or printed branding. Collar stays sharp.</div>
+          <div class="product-meta">
+            <span class="product-from">From ₹399</span>
+            <div class="product-dots">
+              <span style="background:#fff;border:1px solid #ddd"></span>
+              <span style="background:#1a1a1a"></span>
+              <span style="background:#0097b2"></span>
+              <span style="background:#2c3e50"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="product-card">
+        <div class="product-img">
+          <span class="product-tag">Best Seller</span>
+          <img src="https://res.cloudinary.com/dpaxjxw3z/image/upload/q_auto/f_auto/v1779183879/Untitled_design__2_-removebg-preview_rlc1ey.png" alt="Classic Crew Tee" />
+        </div>
+        <div class="product-info">
+          <div class="product-name">OVERSIZED DROP</div>
+          <div class="product-desc">Streetwear-ready drop-shoulder cut. Perfect canvas for bold graphic prints.</div>
+          <div class="product-meta">
+            <span class="product-from">From ₹299</span>
+            <div class="product-dots">
+              <span style="background:#f5f2ed;border:1px solid #ddd"></span>
+              <span style="background:#1a1a1a"></span>
+              <span style="background:#2c3e50"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="product-card">
+        <div class="product-img">
+          
+          <img src="https://res.cloudinary.com/dpaxjxw3z/image/upload/q_auto/f_auto/v1779184218/Untitled_design__3_-removebg-preview_i06k16.png" alt="Classic Crew Tee" />
+        </div>
+        <div class="product-info">
+          <div class="product-name">Hoodies</div>
+          <div class="product-desc">All-over photo-quality print on polyester. Never fades, never cracks, never peels.</div>
+          <div class="product-meta">
+            <span class="product-from">Comming Soon</span>
+            <div class="product-dots">
+              <span style="background:linear-gradient(135deg,#0097b2,#e74c3c)"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="product-card">
+        <div class="product-img">
+          
+          <img src="https://res.cloudinary.com/dpaxjxw3z/image/upload/q_auto/f_auto/v1779184218/Untitled_design__3_-removebg-preview_i06k16.png" alt="Classic Crew Tee" />
+        </div>
+        <div class="product-info">
+          <div class="product-name">Kids</div>
+          <div class="product-desc">All-over photo-quality print on polyester. Never fades, never cracks, never peels.</div>
+          <div class="product-meta">
+            <span class="product-from">Comming Soon</span>
+            <div class="product-dots">
+              <span style="background:linear-gradient(135deg,#0097b2,#e74c3c)"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="product-card">
+        <div class="product-img">
+          
+          <img src="https://res.cloudinary.com/dpaxjxw3z/image/upload/q_auto/f_auto/v1779184218/Untitled_design__3_-removebg-preview_i06k16.png" alt="Classic Crew Tee" />
+        </div>
+        <div class="product-info">
+          <div class="product-name">Womens</div>
+          <div class="product-desc">All-over photo-quality print on polyester. Never fades, never cracks, never peels.</div>
+          <div class="product-meta">
+            <span class="product-from">Comming Soon</span>
+            <div class="product-dots">
+              <span style="background:linear-gradient(135deg,#0097b2,#e74c3c)"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+  </section>
+
+  <!-- ══ ABOUT ══ -->
+  <section id="about">
+    <div class="about-text reveal">
+      <div class="section-label">// 02 — About</div>
+      <h2 class="section-title">We Print Your<br/>Vision.</h2>
+      <p>Triweave Print Xpress is a Chennai-based custom printing studio bringing your designs to life on premium garments. From a single custom piece to thousands of bulk tees — we handle it all.</p>
+      <p>Every product leaves our studio with precision printing, vibrant colors, and wearability that lasts. We're not just printers — we're your production partner.</p>
+      <p style="color: var(--cyan); font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.1em;">Adampakkam, Chennai · Est. since day one.</p>
+    </div>
+    <div class="about-stats reveal">
+      <div class="stat-box">
+        <span class="stat-num">500+</span>
+        <span class="stat-label">Orders Delivered</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-num">4+</span>
+        <span class="stat-label">Print Methods</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-num">24H</span>
+        <span class="stat-label">Sample Turnaround</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-num">1</span>
+        <span class="stat-label">Min. Order Qty</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SERVICES ══ -->
+  <section id="services">
+    <div class="reveal">
+      <div class="section-label">// 03 — Services</div>
+      <h2 class="section-title">How We Print.</h2>
+    </div>
+    <div class="services-grid reveal">
+      <div class="service-card">
+        <div class="service-icon">🖨️</div>
+        <div class="service-name">DTF PRINTING</div>
+        <div class="service-desc">Direct-to-Film transfers for vivid, durable full-color prints on any fabric type. Perfect for detailed, photographic designs.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎨</div>
+        <div class="service-name">SCREEN PRINTING</div>
+        <div class="service-desc">Classic silkscreen method for bulk orders. Cost-effective and long-lasting for simple to multi-color designs.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌈</div>
+        <div class="service-name">SUBLIMATION</div>
+        <div class="service-desc">All-over printing for polyester fabrics. Seamless, photo-quality prints that never peel or crack — ever.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📦</div>
+        <div class="service-name">BULK ORDERS</div>
+        <div class="service-desc">From 10 to 10,000 pieces. Corporate uniforms, college events, sports teams — we handle any scale.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">✏️</div>
+        <div class="service-name">CUSTOM DESIGN</div>
+        <div class="service-desc">Don't have a design? Our in-house team turns your ideas into print-ready artwork — free with every order.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">👕</div>
+        <div class="service-name">GARMENT SUPPLY</div>
+        <div class="service-desc">We source premium blanks — crew necks, polos, hoodies, oversized fits — in the colors and sizes you need.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ GALLERY ══ -->
+  <section id="gallery">
+    <div class="gallery-header reveal">
+      <div>
+        <div class="section-label">// 04 — Gallery</div>
+        <h2 class="section-title">Our Work.</h2>
+      </div>
+      <a href="#contact" class="btn-secondary">Order Similar →</a>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="g-item">
+        <img src="https://res.cloudinary.com/dpaxjxw3z/image/upload/v1779175755/Celebrating_the_most_anticipated_move_in_motorsport._The_iconic_44_meets_the_Prancing_Horse_on_1_vhagvy.webp" alt="Custom T-Shirt Print 1" loading="lazy" />
+        <div class="g-item-overlay"><span class="g-item-label"></span></div>
+      </div>
+      <div class="g-item">
+        <img src="https://res.cloudinary.com/dpaxjxw3z/image/upload/v1779177072/Legacy_on_a_tshirt.M-Power_meets_street_style.BMW_Motorsport_the_mighty_E46_Product_Featu_2_suxtms.webp" alt="Custom T-Shirt Print 2" loading="lazy" />
+        <div class="g-item-overlay"><span class="g-item-label"></span></div>
+      </div>
+      <div class="g-item">
+        <img src="https://res.cloudinary.com/dpaxjxw3z/image/upload/v1779177074/Celebrating_the_most_anticipated_move_in_motorsport._The_iconic_44_meets_the_Prancing_Horse_on_2_skwdtx.webp" alt="Custom T-Shirt Print 3" loading="lazy" />
+        <div class="g-item-overlay"><span class="g-item-label"></span></div>
+      </div>
+      <div class="g-item">
+        <img src="https://res.cloudinary.com/dpaxjxw3z/image/upload/v1779177076/Ready_to_Believe_It_Got_that_drip_with_this_epic_Naruto_Uzumaki_crossover_tee.One_legend_2_ckw21h.webp" alt="Custom T-Shirt Print 4" loading="lazy" />
+        <div class="g-item-overlay"><span class="g-item-label"></span></div>
+      </div>
+      <div class="g-item">
+        <img src="https://placehold.co/400x400/e8e4dd/cccccc?text=T-Shirt+5" alt="Custom T-Shirt Print 5" loading="lazy" />
+        <div class="g-item-overlay"><span class="g-item-label"></span></div>
+      </div>
+      <div class="g-item">
+        <img src="https://placehold.co/600x800/e8e4dd/cccccc?text=T-Shirt+6" alt="Custom T-Shirt Print 6" loading="lazy" />
+        <div class="g-item-overlay"><span class="g-item-label"></span></div>
+      </div>
+      <div class="g-item">
+        <img src="https://placehold.co/600x400/e8e4dd/cccccc?text=T-Shirt+7" alt="Custom T-Shirt Print 7" loading="lazy" />
+        <div class="g-item-overlay"><span class="g-item-label"></span></div>
+      </div>
+      <div class="g-item">
+        <img src="https://placehold.co/600x400/e8e4dd/cccccc?text=T-Shirt+8" alt="Custom T-Shirt Print 8" loading="lazy" />
+        <div class="g-item-overlay"><span class="g-item-label"></span></div>
+      </div>
+      <div class="g-item">
+        <img src="https://placehold.co/600x400/e8e4dd/cccccc?text=T-Shirt+7" alt="Custom T-Shirt Print 9" loading="lazy" />
+        <div class="g-item-overlay"><span class="g-item-label"></span></div>
+      </div>
+      <div class="g-item">
+        <img src="https://placehold.co/600x400/e8e4dd/cccccc?text=T-Shirt+8" alt="Custom T-Shirt Print 10" loading="lazy" />
+        <div class="g-item-overlay"><span class="g-item-label"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ WHY US ══ -->
+  <section id="why">
+    <div class="reveal">
+      <div class="section-label">// 05 — Why Triweave</div>
+      <h2 class="section-title">The Difference.</h2>
+    </div>
+    <div class="why-grid reveal">
+      <div class="why-item">
+        <div class="why-num">01</div>
+        <div class="why-title">SHARP PRINTS</div>
+        <div class="why-desc">Industry-grade machines ensure crisp, vibrant prints that last wash after wash — guaranteed.</div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">02</div>
+        <div class="why-title">FAST TURNAROUND</div>
+        <div class="why-desc">Samples in 24 hours. Bulk orders delivered on schedule — always, no exceptions.</div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">03</div>
+        <div class="why-title">MOQ: 1 PIECE</div>
+        <div class="why-desc">Minimum order of just 1 piece. No quantity too small or too large for our studio.</div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">04</div>
+        <div class="why-title">FAIR PRICING</div>
+        <div class="why-desc">Transparent quotes with zero hidden charges. Volume discounts auto-apply for bulk orders.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CONTACT ══ -->
+  <section id="contact">
+    <div class="reveal">
+      <div class="section-label">// 06 — Contact</div>
+      <h2 class="section-title">Let's Print.</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <div class="contact-item-label">Phone</div>
+            <div class="contact-item-value">
+              <a href="tel:+916374338510">63743 38510</a><br/>
+              <a href="tel:+919360689035">93606 89035</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <div class="contact-item-label">Email</div>
+            <div class="contact-item-value">
+              <a href="mailto:Triweave35@gmail.com">Triweave35@gmail.com</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-item-label">Address</div>
+            <div class="contact-item-value">
+              2nd Street, Balakrishnapuram<br/>
+              Adampakkam, Chennai<br/>
+              Tamilnadu — 600088, India
+            </div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🕐</div>
+          <div>
+            <div class="contact-item-label">Working Hours</div>
+            <div class="contact-item-value">
+              Mon – Sat: 9:00 AM – 7:00 PM<br/>
+              Sunday: By Appointment
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form reveal" id="quoteForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" placeholder="Triweave" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="+91 93606 89035" required/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="you@example.com" required/>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="service">Product / Service</label>
+            <select id="service">
+              <option value="">Select...</option>
+              <option>Custom Design Help</option>
+              <option>Classic Crew Neck</option>
+              <option>Event Tee</option>
+              <option>Polo Shirt</option>
+              
+              <option>Oversized Drop Shoulder</option>
+              <option>DTF Printing</option>
+              <option>Screen Printing</option>
+              <option>Bulk Order</option>
+              
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="qty">Quantity</label>
+            <input type="number" id="qty" placeholder="e.g. 50" min="1" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="msg">Message / Requirements</label>
+          <textarea id="msg" rows="4" placeholder="Describe your design, colors, deadline, size breakdown..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send Quote Request →</button>
+        <p id="formMsg" style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--cyan); display: none; letter-spacing: 0.1em;">
+          ✓ Message sent! We'll contact you shortly.
+        </p>
+      </form>
+    </div>
+
+    <div class="map-wrap reveal">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d242.9794076564858!2d80.20503511502638!3d12.992912862647465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52675eb8422bed%3A0xae3381e52ee6cf2e!2s5%2C%202nd%20St%2C%20Ramapuram%2C%20Balakrishnapuram%2C%20Balkrishanapuram%2C%20Chennai%2C%20Tamil%20Nadu%20600088!5e0!3m2!1sen!2sin!4v1779188466441!5m2!1sen!2sin"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    title="Triweave Print Xpress Location">
+  </iframe>
+</div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <!-- FOOTER LOGO PLACEHOLDER — replace img when ready -->
+    <div class="footer-logo">TRIWEAVE <span>PRINT XPRESS</span></div>
+    <ul class="footer-links">
+      <li><a href="#products">Products</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Triweave Print Xpress · Chennai</div>
+  </footer>
+
+  <script>
+    // ── PARTICLES
+    const particleContainer = document.getElementById('particles');
+    for (let i = 0; i < 18; i++) {
+      const p = document.createElement('div');
+      p.className = 'particle';
+      p.style.cssText = `
+        left: ${Math.random() * 100}%;
+        top:  ${Math.random() * 100}%;
+        --dur:   ${4 + Math.random() * 6}s;
+        --delay: ${Math.random() * 6}s;
+        --dx:    ${(Math.random() - 0.5) * 120}px;
+        --dy:    ${-80 - Math.random() * 120}px;
+        width:   ${2 + Math.random() * 4}px;
+        height:  ${2 + Math.random() * 4}px;
+        opacity: 0;
+      `;
+      particleContainer.appendChild(p);
+    }
+
+    // ── T-SHIRT COLOR SWITCHER
+    function changeColor(dot) {
+      document.querySelectorAll('.color-dot').forEach(d => d.classList.remove('active'));
+      dot.classList.add('active');
+      const color  = dot.dataset.color;
+      const stroke = dot.dataset.stroke;
+      const body   = document.getElementById('shirtBody');
+      if (body) {
+        body.style.transition = 'fill 0.4s ease';
+        body.setAttribute('fill', color);
+        body.setAttribute('stroke', stroke);
+      }
+      // Adjust print color for dark shirts
+      const printGroup = document.getElementById('shirtPrint');
+      if (printGroup) {
+        const isDark = color === '#1a1a1a' || color === '#2c3e50' || color === '#c0392b' || color === '#1a7a4a';
+        printGroup.querySelectorAll('polygon, path').forEach(el => {
+          if (el.getAttribute('stroke') === '#0097b2') {
+            el.setAttribute('stroke', isDark ? '#00eeff' : '#0097b2');
+          }
+        });
+        printGroup.querySelectorAll('text').forEach(el => {
+          if (el.getAttribute('fill') === '#0097b2' || el.getAttribute('fill') === '#00eeff') {
+            el.setAttribute('fill', isDark ? '#00eeff' : '#0097b2');
+          }
+          if (el.getAttribute('fill') === '#aaa' || el.getAttribute('fill') === '#ccc') {
+            el.setAttribute('fill', isDark ? 'rgba(255,255,255,0.4)' : '#aaa');
+          }
+        });
+      }
+    }
+
+    // ── SCROLL REVEAL
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 80);
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+
+    // ── MOBILE NAV
+    const menuBtn      = document.getElementById('menuBtn');
+    const mobileNav    = document.getElementById('mobileNav');
+    const mobileOverlay= document.getElementById('mobileOverlay');
+    const closeNav = () => {
+      mobileNav.classList.remove('open');
+      mobileOverlay.classList.remove('open');
+    };
+    menuBtn.addEventListener('click', () => {
+      mobileNav.classList.toggle('open');
+      mobileOverlay.classList.toggle('open');
+    });
+    mobileOverlay.addEventListener('click', closeNav);
+    document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', closeNav));
+
+    // ── FORM SUBMIT
+    document.getElementById('quoteForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name    = document.getElementById('name').value;
+      const phone   = document.getElementById('phone').value;
+      const email   = document.getElementById('email').value;
+      const service = document.getElementById('service').value;
+      const qty     = document.getElementById('qty').value;
+      const msg     = document.getElementById('msg').value;
+      const body    = encodeURIComponent(`Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nProduct/Service: ${service}\nQuantity: ${qty}\n\nMessage:\n${msg}`);
+      window.location.href = `mailto:Triweave35@gmail.com?subject=Quote Request from ${encodeURIComponent(name)}&body=${body}`;
+      document.getElementById('formMsg').style.display = 'block';
+      this.reset();
+    });
+
+    // ── NAV ON SCROLL
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('mainNav');
+      nav.style.background = window.scrollY > 60 ? 'rgba(245,242,237,0.99)' : 'rgba(245,242,237,0.92)';
+      if (window.scrollY > 60) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    });
+  </script>
+</body>
+</html>

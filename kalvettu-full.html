@@ -1,918 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kalvettu.in: Tamil Printed T-Shirts & Spiritual T-Shirts for Men</title>
-<meta name="description" content="Shop Tamil printed T-shirts for men, including Murugan spiritual T-shirts, Tamil quote designs, oversized T-shirts, full sleeve T-shirts, and polo T-shirts from Kalvettu.">
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Triweave Print Xpress | Custom T-Shirt Printing</title>
+  <meta
+    name="description"
+    content="Triweave Print Xpress portfolio front page with custom t-shirt printing showcase and contact details."
+  />
+  <style>
+    :root {
+      --bg: #f5ecce;
+      --card: #fffef8;
+      --ink: #121212;
+      --muted: #575757;
+      --accent: #1da6df;
+      --line: #ddd3b1;
+      --radius: 14px;
+      --shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      --font: "Segoe UI", system-ui, -apple-system, sans-serif;
+    }
 
-  :root {
-    --black: #111111;
-    --white: #ffffff;
-    --red: #c0392b;
-    --red-dark: #922b21;
-    --gray-bg: #f5f5f5;
-    --gray-border: #e2e2e2;
-    --text-dark: #1a1a1a;
-    --text-muted: #777;
-    --gold: #c9a84c;
-    --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
-  }
+    * { box-sizing: border-box; }
 
-  html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      background: linear-gradient(180deg, var(--bg), #f9f4de);
+      color: var(--ink);
+      line-height: 1.5;
+    }
 
-  body {
-    font-family: var(--font);
-    background: var(--white);
-    color: var(--text-dark);
-    overflow-x: hidden;
-    line-height: 1.5;
-  }
+    .container {
+      width: min(1120px, 92vw);
+      margin: 0 auto;
+      padding: 24px 0 56px;
+    }
 
-  a { text-decoration: none; color: inherit; }
-  img { display: block; max-width: 100%; }
+    .hero {
+      text-align: center;
+      padding: 28px 18px;
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--line);
+    }
 
-  /* ══════════════════════════════════
-     ANNOUNCEMENT BAR
-  ══════════════════════════════════ */
-  .announcement {
-    background: var(--black);
-    color: var(--white);
-    font-size: 12px;
-    letter-spacing: 1.2px;
-    text-align: center;
-    padding: 9px 16px;
-    text-transform: uppercase;
-    font-weight: 500;
-  }
-  .announcement span { color: var(--gold); margin: 0 6px; }
+    .logo {
+      width: min(320px, 70vw);
+      margin: 0 auto 14px;
+      border-radius: 10px;
+    }
 
-  /* ══════════════════════════════════
-     HEADER
-  ══════════════════════════════════ */
-  header {
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    background: var(--white);
-    border-bottom: 1px solid var(--gray-border);
-    box-shadow: 0 1px 6px rgba(0,0,0,0.07);
-  }
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: 1.5px;
+    }
 
-  .header-inner {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 24px;
-    height: 64px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-  }
+    .tagline {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.02rem, 2vw, 1.35rem);
+    }
 
-  .logo img {
-    height: 36px;
-    width: auto;
-    object-fit: contain;
-  }
+    .intro {
+      margin: 16px auto 0;
+      max-width: 800px;
+      color: #2b2b2b;
+    }
 
-  .main-nav {
-    display: flex;
-    gap: 6px;
-    align-items: center;
-  }
-  .main-nav a {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--black);
-    letter-spacing: 0.5px;
-    padding: 8px 12px;
-    border-radius: 4px;
-    transition: background 0.2s, color 0.2s;
-    white-space: nowrap;
-  }
-  .main-nav a:hover { background: var(--gray-bg); color: var(--red); }
+    .section-title {
+      margin: 42px 0 16px;
+      font-size: 1.5rem;
+      border-bottom: 2px solid var(--line);
+      padding-bottom: 8px;
+    }
 
-  .header-actions {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-  .header-actions a {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--black);
-    padding: 7px 12px;
-    border-radius: 4px;
-    transition: background 0.2s, color 0.2s;
-    border: 1px solid transparent;
-  }
-  .header-actions a:hover { background: var(--gray-bg); color: var(--red); }
-  .header-actions .cart-btn {
-    background: var(--black);
-    color: var(--white);
-    border-color: var(--black);
-    border-radius: 4px;
-  }
-  .header-actions .cart-btn:hover { background: var(--red); border-color: var(--red); color: #fff; }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
 
-  /* ══════════════════════════════════
-     HERO / BANNER
-  ══════════════════════════════════ */
-  .hero {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 20px 24px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    min-height: 520px;
-  }
+    .card {
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--card);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
 
-  .hero-img {
-    border-radius: 8px;
-    overflow: hidden;
-    position: relative;
-    cursor: pointer;
-  }
-  .hero-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-  }
-  .hero-img:hover img { transform: scale(1.04); }
-  .hero-img .hero-badge {
-    position: absolute;
-    top: 16px; left: 16px;
-    background: var(--red);
-    color: #fff;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    padding: 5px 12px;
-    border-radius: 3px;
-  }
-  .hero-img .hero-cta {
-    position: absolute;
-    bottom: 20px; left: 20px;
-    background: rgba(0,0,0,0.75);
-    color: #fff;
-    font-size: 13px;
-    font-weight: 700;
-    padding: 10px 20px;
-    border-radius: 4px;
-    letter-spacing: 0.5px;
-    backdrop-filter: blur(4px);
-    transition: background 0.2s;
-  }
-  .hero-img:hover .hero-cta { background: var(--red); }
+    .card img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      display: block;
+      background: #ece6d1;
+    }
 
-  /* ══════════════════════════════════
-     TRUST BAR
-  ══════════════════════════════════ */
-  .trust-bar {
-    background: var(--gray-bg);
-    border-top: 1px solid var(--gray-border);
-    border-bottom: 1px solid var(--gray-border);
-  }
-  .trust-bar-inner {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 24px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-  }
-  .trust-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 18px 20px;
-    border-right: 1px solid var(--gray-border);
-  }
-  .trust-item:last-child { border-right: none; }
-  .trust-icon { font-size: 24px; flex-shrink: 0; }
-  .trust-text strong { display: block; font-size: 13px; font-weight: 700; color: var(--black); }
-  .trust-text span { font-size: 11px; color: var(--text-muted); }
+    .card-body {
+      padding: 10px 12px 14px;
+    }
 
-  /* ══════════════════════════════════
-     SECTION WRAPPER
-  ══════════════════════════════════ */
-  .section {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 48px 24px;
-  }
-  .section-dark-wrap {
-    background: #0f0f0f;
-  }
-  .section-gray-wrap {
-    background: var(--gray-bg);
-  }
+    .card-title {
+      margin: 0;
+      font-size: 1rem;
+    }
 
-  .section-head {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 28px;
-  }
-  .section-head h2 {
-    font-size: 22px;
-    font-weight: 800;
-    white-space: nowrap;
-    color: var(--black);
-    letter-spacing: -0.3px;
-  }
-  .section-dark-wrap .section-head h2 { color: var(--white); }
-  .section-dark-wrap .section-head .divider { background: rgba(255,255,255,0.12); }
+    .contact {
+      margin-top: 42px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 20px;
+    }
 
-  .divider {
-    flex: 1;
-    height: 1px;
-    background: var(--gray-border);
-  }
-  .view-all {
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--red);
-    white-space: nowrap;
-    padding: 6px 14px;
-    border: 1px solid var(--red);
-    border-radius: 3px;
-    transition: background 0.2s, color 0.2s;
-  }
-  .view-all:hover { background: var(--red); color: #fff; }
+    .contact h2 {
+      margin: 0 0 4px;
+      font-size: 1.4rem;
+    }
 
-  /* ══════════════════════════════════
-     GENERIC CARD
-  ══════════════════════════════════ */
-  .card {
-    position: relative;
-    border-radius: 6px;
-    overflow: hidden;
-    cursor: pointer;
-    background: #eee;
-    display: block;
-  }
-  .card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.45s ease;
-  }
-  .card:hover img { transform: scale(1.06); }
+    .contact-item {
+      margin: 0;
+      font-size: 1.04rem;
+    }
 
-  .card-label {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    padding: 28px 14px 14px;
-    background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 100%);
-    color: var(--white);
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 0.3px;
-  }
-  .card-label-center {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0,0,0,0.35);
-    color: var(--white);
-    font-size: 20px;
-    font-weight: 800;
-    letter-spacing: 0.5px;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
-    transition: background 0.3s;
-  }
-  .card:hover .card-label-center { background: rgba(192,57,43,0.55); }
+    .contact-label {
+      font-weight: 700;
+    }
 
-  /* gold label variant for spiritual */
-  .card-label-gold {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    padding: 28px 14px 14px;
-    background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, transparent 100%);
-    color: var(--gold);
-    font-size: 14px;
-    font-weight: 700;
-    text-align: center;
-  }
+    .footer {
+      margin-top: 28px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
 
-  /* ══════════════════════════════════
-     TAMIL T-SHIRTS — 4 col
-  ══════════════════════════════════ */
-  .grid-4 {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 14px;
-  }
-  .grid-4 .card { aspect-ratio: 3/4; }
+    @media (max-width: 900px) {
+      .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
 
-  /* ══════════════════════════════════
-     THEME — 6 col
-  ══════════════════════════════════ */
-  .grid-6 {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 12px;
-  }
-  .grid-6 .card { aspect-ratio: 1 / 1; }
-
-  /* ══════════════════════════════════
-     SPIRITUAL GODS — 4 col
-  ══════════════════════════════════ */
-  .grid-4-sq .card { aspect-ratio: 1 / 1; }
-
-  /* ══════════════════════════════════
-     SPIRITUAL TYPES — 4 col landscape
-  ══════════════════════════════════ */
-  .grid-4-land { margin-top: 14px; }
-  .grid-4-land .card { aspect-ratio: 4/3; }
-
-  /* ══════════════════════════════════
-     POSTERS — 2 col
-  ══════════════════════════════════ */
-  .grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-  .grid-2 .card { aspect-ratio: 16/8; }
-
-  /* ══════════════════════════════════
-     COUPLE — full width
-  ══════════════════════════════════ */
-  .couple-card {
-    border-radius: 8px;
-    overflow: hidden;
-    cursor: pointer;
-    position: relative;
-    max-height: 420px;
-  }
-  .couple-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s;
-  }
-  .couple-card:hover img { transform: scale(1.04); }
-  .couple-card .card-label-center { font-size: 26px; }
-
-  /* ══════════════════════════════════
-     FANDOM & LEADERS — 3 col
-  ══════════════════════════════════ */
-  .grid-3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-  }
-  .grid-3 .card { aspect-ratio: 3/4; }
-
-  /* ══════════════════════════════════
-     ABOUT SECTION
-  ══════════════════════════════════ */
-  .about-wrap {
-    background: #faf8f4;
-    border-top: 1px solid var(--gray-border);
-    border-bottom: 1px solid var(--gray-border);
-  }
-  .about-inner {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 48px 24px;
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
-  }
-  .about-inner img {
-    height: 50px;
-    width: auto;
-    flex-shrink: 0;
-  }
-  .about-inner h1 {
-    font-size: 18px;
-    font-weight: 800;
-    margin-bottom: 10px;
-    color: var(--black);
-  }
-  .about-inner p {
-    font-size: 14px;
-    color: #555;
-    line-height: 1.75;
-    max-width: 760px;
-  }
-
-  /* ══════════════════════════════════
-     FOOTER
-  ══════════════════════════════════ */
-  footer {
-    background: #0f0f0f;
-    color: rgba(255,255,255,0.6);
-  }
-  .footer-inner {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 52px 24px 28px;
-  }
-  .footer-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 48px;
-    margin-bottom: 48px;
-  }
-  .footer-brand img {
-    height: 32px;
-    margin-bottom: 16px;
-    filter: brightness(10);
-    opacity: 0.9;
-  }
-  .footer-brand p { font-size: 13px; line-height: 1.75; color: rgba(255,255,255,0.5); }
-
-  .footer-col h5 {
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.9);
-    margin-bottom: 18px;
-  }
-  .footer-col a {
-    display: block;
-    font-size: 13px;
-    color: rgba(255,255,255,0.5);
-    margin-bottom: 10px;
-    transition: color 0.2s;
-  }
-  .footer-col a:hover { color: var(--red); }
-
-  .footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.08);
-    padding-top: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 12px;
-    color: rgba(255,255,255,0.3);
-  }
-
-  /* ══════════════════════════════════
-     MOBILE NAV
-  ══════════════════════════════════ */
-  .mobile-bar {
-    display: none;
-    position: fixed;
-    bottom: 0; left: 0; right: 0;
-    background: var(--white);
-    border-top: 1px solid var(--gray-border);
-    z-index: 9999;
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.08);
-  }
-  .mobile-bar-inner {
-    display: flex;
-    justify-content: space-around;
-    padding: 8px 0 10px;
-  }
-  .mobile-bar a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3px;
-    font-size: 10px;
-    font-weight: 600;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  .mobile-bar a .mico { font-size: 20px; }
-  .mobile-bar a.active { color: var(--red); }
-
-  /* ══════════════════════════════════
-     RESPONSIVE
-  ══════════════════════════════════ */
-  @media (max-width: 1024px) {
-    .grid-6 { grid-template-columns: repeat(3, 1fr); }
-  }
-
-  @media (max-width: 860px) {
-    .main-nav { display: none; }
-    .hero { grid-template-columns: 1fr; min-height: auto; gap: 8px; }
-    .hero-img:first-child { min-height: 300px; }
-    .hero-img:last-child { min-height: 240px; }
-    .trust-bar-inner { grid-template-columns: repeat(2, 1fr); }
-    .trust-item:nth-child(2) { border-right: none; }
-    .grid-4 { grid-template-columns: repeat(2, 1fr); }
-    .grid-6 { grid-template-columns: repeat(2, 1fr); }
-    .grid-3 { grid-template-columns: repeat(2, 1fr); }
-    .grid-2 { grid-template-columns: 1fr; }
-    .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
-    .about-inner { flex-direction: column; gap: 16px; }
-    .mobile-bar { display: block; }
-    body { padding-bottom: 68px; }
-  }
-
-  @media (max-width: 520px) {
-    .header-inner { padding: 0 14px; }
-    .section { padding: 32px 14px; }
-    .hero { padding: 10px 14px; }
-    .grid-4 { grid-template-columns: repeat(2, 1fr); gap: 8px; }
-    .grid-6 { grid-template-columns: repeat(2, 1fr); gap: 8px; }
-    .grid-3 { grid-template-columns: 1fr 1fr; gap: 8px; }
-    .footer-grid { grid-template-columns: 1fr; }
-    .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
-    .trust-bar-inner { grid-template-columns: repeat(2, 1fr); }
-  }
-</style>
+    @media (max-width: 600px) {
+      .gallery { grid-template-columns: 1fr; }
+      .container { width: min(95vw, 680px); }
+      .contact-item { font-size: 0.98rem; }
+    }
+  </style>
 </head>
 <body>
+  <main class="container">
+    <section class="hero">
+      <img
+        class="logo"
+        src="https://via.placeholder.com/640x640/f5ecce/111111?text=TRIWEAVE+LOGO"
+        alt="Triweave Print Xpress logo"
+      />
+      <h1>TRIWEAVE PRINT XPRESS</h1>
+      <p class="tagline">Design • Print • Repeat</p>
+      <p class="intro">
+        Custom t-shirt printing for individuals, teams, events, and businesses. We create quality prints with bold style and fast turnaround.
+      </p>
+    </section>
 
-<!-- ═══ ANNOUNCEMENT ═══ -->
-<div class="announcement">
-  🚚 Free Shipping on orders above ₹499 <span>|</span> COD Available <span>|</span> Easy 7-Day Returns
-</div>
+    <h2 class="section-title">T-Shirt Portfolio</h2>
+    <section id="gallery" class="gallery" aria-label="T-shirt product gallery"></section>
 
-<!-- ═══ HEADER ═══ -->
-<header>
-  <div class="header-inner">
-    <a href="https://www.kalvettu.in/" class="logo">
-      <img src="https://www.kalvettu.in/_next/image?url=%2Fbrand%2Fkalvettu-logo.png&w=640&q=75" alt="Kalvettu" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-      <span style="display:none; font-size:22px; font-weight:900; letter-spacing:1px;">Kalvettu</span>
-    </a>
+    <section class="contact" aria-label="Contact details">
+      <h2>Contact Us</h2>
+      <p class="contact-item"><span class="contact-label">Phone:</span> 63743 38510, 93606 89035</p>
+      <p class="contact-item"><span class="contact-label">Email:</span> Triweave35@gmail.com</p>
+      <p class="contact-item">
+        <span class="contact-label">Address:</span>
+        2nd Street, Balakrishnapuram, Adampakkam, Chennai, Tamilnadu - 600088, India
+      </p>
+    </section>
 
-    <nav class="main-nav">
-      <a href="https://www.kalvettu.in/shop/tamil-printed-t-shirts">Shop</a>
-      <a href="https://www.kalvettu.in/shop/new-arrivals">New Arrivals</a>
-      <a href="https://www.kalvettu.in/shop/tamil-printed-t-shirts">Tamil T-Shirts</a>
-      <a href="https://www.kalvettu.in/shop/tamil-oversized-t-shirts">Oversized</a>
-    </nav>
+    <p class="footer">© <span id="year"></span> Triweave Print Xpress. All rights reserved.</p>
+  </main>
 
-    <div class="header-actions">
-      <a href="https://www.kalvettu.in/account">
-        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        Account
-      </a>
-      <a href="https://www.kalvettu.in/cart" class="cart-btn">
-        <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-        Cart
-      </a>
-    </div>
-  </div>
-</header>
+  <script>
+    // Paste your Google Drive converted image links here:
+    // Example: "https://drive.google.com/uc?export=view&id=FILE_ID"
+    const TSHIRT_IMAGE_URLS = [
+      "https://via.placeholder.com/900x1125/1da6df/ffffff?text=Add+T-Shirt+Image+1",
+      "https://via.placeholder.com/900x1125/111111/ffffff?text=Add+T-Shirt+Image+2",
+      "https://via.placeholder.com/900x1125/5d5d5d/ffffff?text=Add+T-Shirt+Image+3",
+      "https://via.placeholder.com/900x1125/ca9f42/111111?text=Add+T-Shirt+Image+4",
+      "https://via.placeholder.com/900x1125/404040/ffffff?text=Add+T-Shirt+Image+5",
+      "https://via.placeholder.com/900x1125/8e8e8e/ffffff?text=Add+T-Shirt+Image+6"
+    ];
 
-<!-- ═══ HERO BANNERS ═══ -->
-<div class="hero">
-  <a href="https://www.kalvettu.in/shop/tamil-printed-t-shirts" class="hero-img">
-    <img
-      src="https://cdn.picflow.com/assets/images/resized/l960/61743da8-9100-4576-987b-2f2a59c77016.jpg"
-      alt="Tamil Printed T-Shirts - Half sleeve"
-      loading="eager"
-    >
-    <div class="hero-badge">New Collection</div>
-    <div class="hero-cta">Shop Tamil T-Shirts →</div>
-  </a>
-  <a href="https://www.kalvettu.in/product/pirapokkum-ella-uyirkum-t-shirt-for-men-half-sleeve-2" class="hero-img">
-    <img
-      src="https://cdn.picflow.com/assets/images/resized/l960/eaeb3341-8de6-4a0a-9f9a-421cc2f3aba0.jpg"
-      alt="Pirapokkum Ella Uyirkum T-Shirt"
-      loading="eager"
-    >
-    <div class="hero-cta">Shop Now →</div>
-  </a>
-</div>
+    const FALLBACK_IMAGE =
+      "https://via.placeholder.com/900x1125/e5dfc6/111111?text=Image+Not+Available";
 
-<!-- ═══ TRUST BAR ═══ -->
-<div class="trust-bar">
-  <div class="trust-bar-inner">
-    <div class="trust-item">
-      <div class="trust-icon">🚚</div>
-      <div class="trust-text"><strong>Free Shipping</strong><span>On orders above ₹499</span></div>
-    </div>
-    <div class="trust-item">
-      <div class="trust-icon">🔄</div>
-      <div class="trust-text"><strong>Easy Returns</strong><span>7-day hassle-free returns</span></div>
-    </div>
-    <div class="trust-item">
-      <div class="trust-icon">💳</div>
-      <div class="trust-text"><strong>COD Available</strong><span>Pay on delivery</span></div>
-    </div>
-    <div class="trust-item">
-      <div class="trust-icon">⭐</div>
-      <div class="trust-text"><strong>Premium Quality</strong><span>100% cotton fabric</span></div>
-    </div>
-  </div>
-</div>
+    const gallery = document.getElementById("gallery");
 
-<!-- ═══ TAMIL T-SHIRTS ═══ -->
-<div>
-  <div class="section">
-    <div class="section-head">
-      <h2>Tamil T-Shirts</h2>
-      <div class="divider"></div>
-      <a href="https://www.kalvettu.in/shop/tamil-printed-t-shirts" class="view-all">View All</a>
-    </div>
-    <div class="grid-4">
-      <a href="https://www.kalvettu.in/shop/tamil-printed-t-shirts" class="card">
-        <img src="https://cdn.picflow.com/assets/images/a585fb91-33d2-4cd6-9a39-166c4bed2571/base/a585fb91-33d2-4cd6-9a39-166c4bed2571.jpg" alt="Tamil Printed T-Shirts - Half Sleeve" loading="lazy">
-        <div class="card-label">Half Sleeve</div>
-      </a>
-      <a href="https://www.kalvettu.in/shop/tamil-oversized-t-shirts" class="card">
-        <img src="https://cdn.picflow.com/assets/images/7bfcee61-f3e5-4af0-ac24-ddbcbbd03f4e/base/7bfcee61-f3e5-4af0-ac24-ddbcbbd03f4e.jpg" alt="Tamil Printed T-Shirts - Oversized" loading="lazy">
-        <div class="card-label">Oversized</div>
-      </a>
-      <a href="https://www.kalvettu.in/shop/tamil-full-sleeve-t-shirts" class="card">
-        <img src="https://cdn.picflow.com/assets/images/86b86011-7751-4edf-aae9-32c317b66c93/base/86b86011-7751-4edf-aae9-32c317b66c93.jpg" alt="Tamil Printed T-Shirts - Full Sleeve" loading="lazy">
-        <div class="card-label">Full Sleeve</div>
-      </a>
-      <a href="https://www.kalvettu.in/shop/tamil-collar-t-shirts" class="card">
-        <img src="https://cdn.picflow.com/assets/images/b4bdb638-6f19-46a2-9195-2042083b04a2/base/b4bdb638-6f19-46a2-9195-2042083b04a2.jpg" alt="Tamil Printed T-Shirts - Polo" loading="lazy">
-        <div class="card-label">Polo / Collar</div>
-      </a>
-    </div>
-  </div>
-</div>
+    TSHIRT_IMAGE_URLS.forEach((url, index) => {
+      const card = document.createElement("article");
+      card.className = "card";
 
-<!-- ═══ SHOP BY THEME ═══ -->
-<div class="section-gray-wrap">
-  <div class="section">
-    <div class="section-head">
-      <h2>Shop By Theme</h2>
-      <div class="divider"></div>
-      <a href="https://www.kalvettu.in/shop/tamil-printed-t-shirts" class="view-all">Browse All</a>
-    </div>
-    <div class="grid-6">
-      <a href="https://www.kalvettu.in/shop/tamil-quotes-t-shirts" class="card">
-        <img src="https://cdn.picflow.com/assets/images/14c1ca41-7e71-45aa-a49f-b51e1024187b/base/14c1ca41-7e71-45aa-a49f-b51e1024187b.jpg" alt="Tamil Quotes T-Shirts" loading="lazy">
-        <div class="card-label">Quotes</div>
-      </a>
-      <a href="https://www.kalvettu.in/shop/tamil-typography-t-shirts" class="card">
-        <img src="https://cdn.picflow.com/assets/images/4e55ab02-f3ab-4721-b18a-10426cf41835/base/4e55ab02-f3ab-4721-b18a-10426cf41835.jpg" alt="Tamil Typography T-Shirts" loading="lazy">
-        <div class="card-label">Typography</div>
-      </a>
-      <a href="https://www.kalvettu.in/shop/tamil-graphic-t-shirts" class="card">
-        <img src="https://cdn.picflow.com/assets/images/24db0286-dab3-4cca-bcd3-7341cdcd8630/base/24db0286-dab3-4cca-bcd3-7341cdcd8630.jpg" alt="Tamil Graphic T-Shirts" loading="lazy">
-        <div class="card-label">Graphic</div>
-      </a>
-      <a href="https://www.kalvettu.in/shop/thiruvalluvar-t-shirts" class="card">
-        <img src="https://cdn.picflow.com/assets/images/61bd74b0-b200-4c68-bab3-7328fcb618fc/base/61bd74b0-b200-4c68-bab3-7328fcb618fc.jpg" alt="Thiruvalluvar T-Shirts" loading="lazy">
-        <div class="card-label">Thiruvalluvar</div>
-      </a>
-      <a href="https://www.kalvettu.in/shop/bharathiyar-t-shirts" class="card">
-        <img src="https://cdn.picflow.com/assets/images/60406f61-43ab-4d68-aaf9-f4f0a5e005f3/base/60406f61-43ab-4d68-aaf9-f4f0a5e005f3.jpg" alt="Bharathiyar T-Shirts" loading="lazy">
-        <div class="card-label">Bharathiyar</div>
-      </a>
-      <a href="https://www.kalvettu.in/shop/tamil-minimal-t-shirts" class="card">
-        <img src="https://cdn.picflow.com/assets/images/84f1f793-c73d-454c-a679-985c91ce500a/base/84f1f793-c73d-454c-a679-985c91ce500a.jpg" alt="Tamil Minimal T-Shirts" loading="lazy">
-        <div class="card-label">Minimal</div>
-      </a>
-    </div>
-  </div>
-</div>
+      const img = document.createElement("img");
+      img.src = url;
+      img.alt = `Triweave t-shirt design ${index + 1}`;
+      img.loading = "lazy";
+      img.referrerPolicy = "no-referrer";
+      img.onerror = () => {
+        img.onerror = null;
+        img.src = FALLBACK_IMAGE;
+      };
 
-<!-- ═══ SPIRITUAL T-SHIRTS ═══ -->
-<div class="section-dark-wrap">
-  <div class="section">
-    <div class="section-head">
-      <h2>Spiritual T-Shirts</h2>
-      <div class="divider"></div>
-      <a href="https://www.kalvettu.in/shop/spiritual-t-shirts" class="view-all">Explore All</a>
-    </div>
+      const cardBody = document.createElement("div");
+      cardBody.className = "card-body";
+      cardBody.innerHTML = `<p class="card-title">Design ${index + 1}</p>`;
 
-    <!-- Gods -->
-    <div class="grid-4 grid-4-sq">
-      <a href="https://www.kalvettu.in/shop/god-murugan-t-shirts" class="card">
-        <img src="https://cdn.picflow.com/assets/images/6480ba00-f8a3-4263-bd8f-b7392a2c35ed/base/6480ba00-f8a3-4263-bd8f-b7392a2c35ed.jpg" alt="Murugan T-Shirts" loading="lazy">
-        <div class="card-label-gold">Murugan</div>
-      </a>
-      <a href="https://www.kalvettu.in/shop/god-sivan-t-shirts" class="card">
-        <img src="https://cdn.picflow.com/assets/images/2d706012-58a3-4e3b-8dd5-6834b812c7e7/base/2d706012-58a3-4e3b-8dd5-6834b812c7e7.jpg" alt="Sivan T-Shirts" loading="lazy">
-        <div class="card-label-gold">Sivan</div>
-      </a>
-      <a href="https://www.kalvettu.in/shop/god-pillaiyar-vinayagar-t-shirts" class="card">
-        <img src="https://cdn.picflow.com/assets/images/c5ae619c-a18a-45a8-8ffd-a05e47ef8ad5/base/c5ae619c-a18a-45a8-8ffd-a05e47ef8ad5.jpg" alt="Vinayagar T-Shirts" loading="lazy">
-        <div class="card-label-gold">Vinayagar</div>
-      </a>
-      <a href="https://www.kalvettu.in/shop/god-ayyappan-t-shirts" class="card">
-        <img src="https://cdn.picflow.com/assets/images/c84f3243-de49-47e2-a639-83436a7c5b6a/base/c84f3243-de49-47e2-a639-83436a7c5b6a.jpg" alt="Ayyappan T-Shirts" loading="lazy">
-        <div class="card-label-gold">Ayyappan</div>
-      </a>
-    </div>
+      card.appendChild(img);
+      card.appendChild(cardBody);
+      gallery.appendChild(card);
+    });
 
-    <!-- Types -->
-    <div class="grid-4 grid-4-land">
-      <a href="https://www.kalvettu.in/shop/spiritual-t-shirts" class="card">
-        <img src="https://cdn.picflow.com/assets/images/86c08ea6-6ee1-4f1c-9938-f567337d7619/base/86c08ea6-6ee1-4f1c-9938-f567337d7619.jpg" alt="Spiritual Half Sleeve T-Shirts" loading="lazy">
-        <div class="card-label">Half Sleeve</div>
-      </a>
-      <a href="https://www.kalvettu.in/shop/spiritual-oversized-t-shirts" class="card">
-        <img src="https://cdn.picflow.com/assets/images/45ad7c6b-f964-4282-9857-2609dcc9e0a1/base/45ad7c6b-f964-4282-9857-2609dcc9e0a1.jpg" alt="Spiritual Oversized T-Shirts" loading="lazy">
-        <div class="card-label">Oversized</div>
-      </a>
-      <a href="https://www.kalvettu.in/shop/spiritual-full-sleeve-t-shirts" class="card">
-        <img src="https://cdn.picflow.com/assets/images/78cd18cf-4d42-4d4f-a599-68007fcd7c35/base/78cd18cf-4d42-4d4f-a599-68007fcd7c35.jpg" alt="Spiritual Full Sleeve T-Shirts" loading="lazy">
-        <div class="card-label">Full Sleeve</div>
-      </a>
-      <a href="https://www.kalvettu.in/shop/spiritual-collar-t-shirts" class="card">
-        <img src="https://cdn.picflow.com/assets/images/c161081f-eeb5-4895-9225-f6a1b77b8db5/base/c161081f-eeb5-4895-9225-f6a1b77b8db5.jpg" alt="Spiritual Polo T-Shirts" loading="lazy">
-        <div class="card-label">Polo / Collar</div>
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ POSTERS ═══ -->
-<div>
-  <div class="section">
-    <div class="section-head">
-      <h2>Posters</h2>
-      <div class="divider"></div>
-      <a href="https://www.kalvettu.in/shop/tamil-wall-posters-for-room" class="view-all">View All</a>
-    </div>
-    <div class="grid-2">
-      <a href="https://www.kalvettu.in/shop/tamil-wall-posters-for-room" class="card">
-        <img src="https://cdn.picflow.com/assets/images/13057a2a-3228-4b73-9973-2eb4f2c136a9/base/13057a2a-3228-4b73-9973-2eb4f2c136a9.jpg" alt="Tamil Posters" loading="lazy">
-        <div class="card-label-center">Tamil Posters</div>
-      </a>
-      <a href="https://www.kalvettu.in/shop/spiritual-wall-posters-for-room" class="card">
-        <img src="https://cdn.picflow.com/assets/images/34562500-00dd-485c-94f4-34a6c5f437dd/base/34562500-00dd-485c-94f4-34a6c5f437dd.jpg" alt="Spiritual Posters" loading="lazy">
-        <div class="card-label-center">Spiritual Posters</div>
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ PLAIN T-SHIRTS ═══ -->
-<div class="section-gray-wrap">
-  <div class="section">
-    <div class="section-head">
-      <h2>Plain T-Shirts</h2>
-      <div class="divider"></div>
-      <a href="https://www.kalvettu.in/shop/half-sleeve-t-shirts" class="view-all">View All</a>
-    </div>
-    <div class="grid-4">
-      <a href="https://www.kalvettu.in/shop/half-sleeve-t-shirts" class="card">
-        <img src="https://cdn.picflow.com/assets/images/resized/l960/5f9350d4-03ae-491b-a884-2f94acdca74d.jpg" alt="Plain Half Sleeve T-Shirts" loading="lazy">
-        <div class="card-label">Half Sleeve</div>
-      </a>
-      <a href="https://www.kalvettu.in/shop/oversized-t-shirts" class="card">
-        <img src="https://cdn.picflow.com/assets/images/resized/l960/3e57320b-de82-477f-88a9-39b98c7fdb62.jpg" alt="Oversized T-Shirts" loading="lazy">
-        <div class="card-label">Oversized</div>
-      </a>
-      <a href="https://www.kalvettu.in/shop/full-sleeve-t-shirts" class="card">
-        <img src="https://cdn.picflow.com/assets/images/resized/l960/3f4fb982-b150-4c69-bccf-c46f2a0ab0e0.jpg" alt="Plain Full Sleeve T-Shirts" loading="lazy">
-        <div class="card-label">Full Sleeve</div>
-      </a>
-      <a href="https://www.kalvettu.in/shop/collar-t-shirts" class="card">
-        <img src="https://cdn.picflow.com/assets/images/resized/l960/1771a414-6b65-44be-b14c-91e0ffa6dfbd.jpg" alt="Plain Polo T-Shirts" loading="lazy">
-        <div class="card-label">Polo / Collar</div>
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ COUPLE T-SHIRTS ═══ -->
-<div>
-  <div class="section">
-    <div class="section-head">
-      <h2>Couple T-Shirts</h2>
-      <div class="divider"></div>
-      <a href="https://www.kalvettu.in/shop/tamil-couple-t-shirts" class="view-all">View All</a>
-    </div>
-    <a href="https://www.kalvettu.in/shop/tamil-couple-t-shirts" class="couple-card">
-      <img src="https://cdn.picflow.com/assets/images/af3754a8-d968-4f97-b3d2-4f542dcdedfb/base/af3754a8-d968-4f97-b3d2-4f542dcdedfb.jpg" alt="Tamil Couple T-Shirts" loading="lazy">
-      <div class="card-label-center">Shop Couple T-Shirts →</div>
-    </a>
-  </div>
-</div>
-
-<!-- ═══ SHOP BY FANDOM ═══ -->
-<div class="section-gray-wrap">
-  <div class="section">
-    <div class="section-head">
-      <h2>Shop By Fandom</h2>
-      <div class="divider"></div>
-      <a href="https://www.kalvettu.in/shop/superstar-rajinikanth-t-shirts" class="view-all">View All</a>
-    </div>
-    <div class="grid-3">
-      <a href="https://www.kalvettu.in/shop/superstar-rajinikanth-t-shirts" class="card">
-        <img src="https://cdn.picflow.com/assets/images/resized/l960/6f5bfc52-3d39-4f86-8d21-1669aff08625.jpg" alt="Rajinikanth T-Shirts" loading="lazy">
-        <div class="card-label">Rajinikanth</div>
-      </a>
-      <a href="https://www.kalvettu.in/shop/thalapathy-vijay-t-shirts" class="card">
-        <img src="https://cdn.picflow.com/assets/images/resized/l960/ca636122-87f5-47ee-ad6b-ee4da19fe617.jpg" alt="Thalapathy Vijay T-Shirts" loading="lazy">
-        <div class="card-label">Thalapathy Vijay</div>
-      </a>
-      <a href="https://www.kalvettu.in/shop/thala-ajith-kumar-t-shirts" class="card">
-        <img src="https://cdn.picflow.com/assets/images/resized/l960/173ad967-74f3-4f14-ae5e-70aae653f490.jpg" alt="Thala Ajith T-Shirts" loading="lazy">
-        <div class="card-label">Thala Ajith</div>
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ SHOP BY LEADERS ═══ -->
-<div>
-  <div class="section">
-    <div class="section-head">
-      <h2>Shop By Leaders</h2>
-      <div class="divider"></div>
-      <a href="https://www.kalvettu.in/shop/apj-abdul-kalam-t-shirts" class="view-all">View All</a>
-    </div>
-    <div class="grid-3">
-      <a href="https://www.kalvettu.in/shop/apj-abdul-kalam-t-shirts" class="card">
-        <img src="https://cdn.picflow.com/assets/images/resized/l960/2d29e409-9ab3-4a3e-aebf-45b0860d1780.jpg" alt="Abdul Kalam T-Shirts" loading="lazy">
-        <div class="card-label">Abdul Kalam</div>
-      </a>
-      <a href="https://www.kalvettu.in/shop/ambedkar-t-shirts" class="card">
-        <img src="https://cdn.picflow.com/assets/images/resized/l960/70aca27f-7d53-40cb-b0e7-7e8b40b4a99b.jpg" alt="Ambedkar T-Shirts" loading="lazy">
-        <div class="card-label">Ambedkar</div>
-      </a>
-      <a href="https://www.kalvettu.in/shop/periyar-t-shirts" class="card">
-        <img src="https://cdn.picflow.com/assets/images/resized/l960/5a47e8a5-a1b9-4d65-a4b4-d8f5b60e3c84.jpg" alt="Periyar T-Shirts" loading="lazy">
-        <div class="card-label">Periyar</div>
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ ABOUT ═══ -->
-<div class="about-wrap">
-  <div class="about-inner">
-    <img src="https://www.kalvettu.in/_next/image?url=%2Fbrand%2Fkalvettu-logo.png&w=640&q=75" alt="Kalvettu" onerror="this.style.display='none'">
-    <div>
-      <h1>Tamil Printed T-Shirts &amp; Spiritual T-Shirts for Men</h1>
-      <p>Kalvettu offers Tamil printed T-shirts for men, including Tamil quote T-shirts, Murugan spiritual T-shirts, Tamil culture designs, oversized T-shirts, full sleeve T-shirts, and polo T-shirts. Our collections are built around Tamil identity, everyday comfort, and designs inspired by Tamil Nadu.</p>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ FOOTER ═══ -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <img src="https://www.kalvettu.in/_next/image?url=%2Fbrand%2Fkalvettu-logo.png&w=640&q=75" alt="Kalvettu" onerror="this.style.display='none'">
-        <p>Tamil printed T-shirts celebrating culture, spirituality, and identity. Crafted with pride, worn with purpose.</p>
-      </div>
-      <div class="footer-col">
-        <h5>Shop</h5>
-        <a href="https://www.kalvettu.in/shop/new-arrivals">New Arrivals</a>
-        <a href="https://www.kalvettu.in/shop/tamil-printed-t-shirts">Tamil T-Shirts</a>
-        <a href="https://www.kalvettu.in/shop/spiritual-t-shirts">Spiritual T-Shirts</a>
-        <a href="https://www.kalvettu.in/shop/tamil-wall-posters-for-room">Posters</a>
-        <a href="https://www.kalvettu.in/shop/half-sleeve-t-shirts">Plain T-Shirts</a>
-        <a href="https://www.kalvettu.in/shop/tamil-couple-t-shirts">Couple T-Shirts</a>
-      </div>
-      <div class="footer-col">
-        <h5>Company</h5>
-        <a href="https://www.kalvettu.in/about-us">About Us</a>
-        <a href="https://www.kalvettu.in/privacy-policy">Privacy Policy</a>
-        <a href="https://www.kalvettu.in/returns-refund-policy">Return &amp; Refund Policy</a>
-        <a href="https://www.kalvettu.in/disclaimer-policy">Disclaimer Policy</a>
-        <a href="https://www.kalvettu.in/terms-conditions">Terms and Conditions</a>
-      </div>
-      <div class="footer-col">
-        <h5>Contact</h5>
-        <a href="https://www.kalvettu.in/">kalvettu.in</a>
-        <a href="https://www.kalvettu.in/account">My Account</a>
-        <a href="https://www.kalvettu.in/cart">Cart</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>Copyright © 2026 Kalvettu. All rights reserved.</span>
-      <span>Made with ❤️ for Tamil culture</span>
-    </div>
-  </div>
-</footer>
-
-<!-- ═══ MOBILE BOTTOM NAV ═══ -->
-<nav class="mobile-bar">
-  <div class="mobile-bar-inner">
-    <a href="https://www.kalvettu.in/" class="active">
-      <span class="mico">🏠</span>Home
-    </a>
-    <a href="https://www.kalvettu.in/shop/new-arrivals">
-      <span class="mico">✨</span>New
-    </a>
-    <a href="https://www.kalvettu.in/shop/tamil-printed-t-shirts">
-      <span class="mico">📂</span>Category
-    </a>
-    <a href="https://www.kalvettu.in/cart">
-      <span class="mico">🛒</span>Cart
-    </a>
-    <a href="https://www.kalvettu.in/account">
-      <span class="mico">👤</span>Account
-    </a>
-  </div>
-</nav>
-
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

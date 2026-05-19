@@ -72,10 +72,32 @@
     gap: 20px;
   }
 
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
   .logo img {
-    height: 36px;
+    height: 52px;
     width: auto;
     object-fit: contain;
+  }
+  .logo-wordmark {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.05;
+  }
+  .logo-wordmark strong {
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 900;
+  }
+  .logo-wordmark small {
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 0.7px;
+    font-weight: 600;
+    margin-top: 4px;
   }
 
   .main-nav {
@@ -522,6 +544,9 @@
 
   @media (max-width: 520px) {
     .header-inner { padding: 0 14px; }
+    .logo img { height: 42px; }
+    .logo-wordmark strong { font-size: 11px; }
+    .logo-wordmark small { font-size: 9px; }
     .section { padding: 32px 14px; }
     .hero { padding: 10px 14px; }
     .grid-4 { grid-template-columns: repeat(2, 1fr); gap: 8px; }
@@ -549,18 +574,18 @@
     </a>
 
     <nav class="main-nav">
-      <a href="https://www.kalvettu.in/shop/tamil-printed-t-shirts">Shop</a>
-      <a href="https://www.kalvettu.in/shop/new-arrivals">New Arrivals</a>
-      <a href="https://www.kalvettu.in/shop/tamil-printed-t-shirts">Tamil T-Shirts</a>
-      <a href="https://www.kalvettu.in/shop/tamil-oversized-t-shirts">Oversized</a>
+      <a href="#shop/tamil-printed-t-shirts">Shop</a>
+      <a href="#shop/new-arrivals">New Arrivals</a>
+      <a href="#shop/tamil-printed-t-shirts">Tamil T-Shirts</a>
+      <a href="#shop/tamil-oversized-t-shirts">Oversized</a>
     </nav>
 
     <div class="header-actions">
-      <a href="https://www.kalvettu.in/account">
+      <a href="#account">
         <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         Account
       </a>
-      <a href="https://www.kalvettu.in/cart" class="cart-btn">
+      <a href="#cart" class="cart-btn">
         <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
         Cart
       </a>
@@ -570,7 +595,7 @@
 
 <!-- ═══ HERO BANNERS ═══ -->
 <div class="hero">
-  <a href="https://www.kalvettu.in/shop/tamil-printed-t-shirts" class="hero-img">
+  <a href="#shop/tamil-printed-t-shirts" class="hero-img">
     <img
       src="https://cdn.picflow.com/assets/images/resized/l960/61743da8-9100-4576-987b-2f2a59c77016.jpg"
       alt="Tamil Printed T-Shirts - Half sleeve"
@@ -579,7 +604,7 @@
     <div class="hero-badge">New Collection</div>
     <div class="hero-cta">Shop Tamil T-Shirts →</div>
   </a>
-  <a href="https://www.kalvettu.in/product/pirapokkum-ella-uyirkum-t-shirt-for-men-half-sleeve-2" class="hero-img">
+  <a href="#product/pirapokkum-ella-uyirkum-t-shirt-for-men-half-sleeve-2" class="hero-img">
     <img
       src="https://cdn.picflow.com/assets/images/resized/l960/eaeb3341-8de6-4a0a-9f9a-421cc2f3aba0.jpg"
       alt="Pirapokkum Ella Uyirkum T-Shirt"
@@ -617,22 +642,22 @@
     <div class="section-head">
       <h2>Tamil T-Shirts</h2>
       <div class="divider"></div>
-      <a href="https://www.kalvettu.in/shop/tamil-printed-t-shirts" class="view-all">View All</a>
+      <a href="#shop/tamil-printed-t-shirts" class="view-all">View All</a>
     </div>
     <div class="grid-4">
-      <a href="https://www.kalvettu.in/shop/tamil-printed-t-shirts" class="card">
+      <a href="#shop/tamil-printed-t-shirts" class="card">
         <img src="https://cdn.picflow.com/assets/images/a585fb91-33d2-4cd6-9a39-166c4bed2571/base/a585fb91-33d2-4cd6-9a39-166c4bed2571.jpg" alt="Tamil Printed T-Shirts - Half Sleeve" loading="lazy">
         <div class="card-label">Half Sleeve</div>
       </a>
-      <a href="https://www.kalvettu.in/shop/tamil-oversized-t-shirts" class="card">
+      <a href="#shop/tamil-oversized-t-shirts" class="card">
         <img src="https://cdn.picflow.com/assets/images/7bfcee61-f3e5-4af0-ac24-ddbcbbd03f4e/base/7bfcee61-f3e5-4af0-ac24-ddbcbbd03f4e.jpg" alt="Tamil Printed T-Shirts - Oversized" loading="lazy">
         <div class="card-label">Oversized</div>
       </a>
-      <a href="https://www.kalvettu.in/shop/tamil-full-sleeve-t-shirts" class="card">
+      <a href="#shop/tamil-full-sleeve-t-shirts" class="card">
         <img src="https://cdn.picflow.com/assets/images/86b86011-7751-4edf-aae9-32c317b66c93/base/86b86011-7751-4edf-aae9-32c317b66c93.jpg" alt="Tamil Printed T-Shirts - Full Sleeve" loading="lazy">
         <div class="card-label">Full Sleeve</div>
       </a>
-      <a href="https://www.kalvettu.in/shop/tamil-collar-t-shirts" class="card">
+      <a href="#shop/tamil-collar-t-shirts" class="card">
         <img src="https://cdn.picflow.com/assets/images/b4bdb638-6f19-46a2-9195-2042083b04a2/base/b4bdb638-6f19-46a2-9195-2042083b04a2.jpg" alt="Tamil Printed T-Shirts - Polo" loading="lazy">
         <div class="card-label">Polo / Collar</div>
       </a>
@@ -646,30 +671,30 @@
     <div class="section-head">
       <h2>Shop By Theme</h2>
       <div class="divider"></div>
-      <a href="https://www.kalvettu.in/shop/tamil-printed-t-shirts" class="view-all">Browse All</a>
+      <a href="#shop/tamil-printed-t-shirts" class="view-all">Browse All</a>
     </div>
     <div class="grid-6">
-      <a href="https://www.kalvettu.in/shop/tamil-quotes-t-shirts" class="card">
+      <a href="#shop/tamil-quotes-t-shirts" class="card">
         <img src="https://cdn.picflow.com/assets/images/14c1ca41-7e71-45aa-a49f-b51e1024187b/base/14c1ca41-7e71-45aa-a49f-b51e1024187b.jpg" alt="Tamil Quotes T-Shirts" loading="lazy">
         <div class="card-label">Quotes</div>
       </a>
-      <a href="https://www.kalvettu.in/shop/tamil-typography-t-shirts" class="card">
+      <a href="#shop/tamil-typography-t-shirts" class="card">
         <img src="https://cdn.picflow.com/assets/images/4e55ab02-f3ab-4721-b18a-10426cf41835/base/4e55ab02-f3ab-4721-b18a-10426cf41835.jpg" alt="Tamil Typography T-Shirts" loading="lazy">
         <div class="card-label">Typography</div>
       </a>
-      <a href="https://www.kalvettu.in/shop/tamil-graphic-t-shirts" class="card">
+      <a href="#shop/tamil-graphic-t-shirts" class="card">
         <img src="https://cdn.picflow.com/assets/images/24db0286-dab3-4cca-bcd3-7341cdcd8630/base/24db0286-dab3-4cca-bcd3-7341cdcd8630.jpg" alt="Tamil Graphic T-Shirts" loading="lazy">
         <div class="card-label">Graphic</div>
       </a>
-      <a href="https://www.kalvettu.in/shop/thiruvalluvar-t-shirts" class="card">
+      <a href="#shop/thiruvalluvar-t-shirts" class="card">
         <img src="https://cdn.picflow.com/assets/images/61bd74b0-b200-4c68-bab3-7328fcb618fc/base/61bd74b0-b200-4c68-bab3-7328fcb618fc.jpg" alt="Thiruvalluvar T-Shirts" loading="lazy">
         <div class="card-label">Thiruvalluvar</div>
       </a>
-      <a href="https://www.kalvettu.in/shop/bharathiyar-t-shirts" class="card">
+      <a href="#shop/bharathiyar-t-shirts" class="card">
         <img src="https://cdn.picflow.com/assets/images/60406f61-43ab-4d68-aaf9-f4f0a5e005f3/base/60406f61-43ab-4d68-aaf9-f4f0a5e005f3.jpg" alt="Bharathiyar T-Shirts" loading="lazy">
         <div class="card-label">Bharathiyar</div>
       </a>
-      <a href="https://www.kalvettu.in/shop/tamil-minimal-t-shirts" class="card">
+      <a href="#shop/tamil-minimal-t-shirts" class="card">
         <img src="https://cdn.picflow.com/assets/images/84f1f793-c73d-454c-a679-985c91ce500a/base/84f1f793-c73d-454c-a679-985c91ce500a.jpg" alt="Tamil Minimal T-Shirts" loading="lazy">
         <div class="card-label">Minimal</div>
       </a>
@@ -683,24 +708,24 @@
     <div class="section-head">
       <h2>Spiritual T-Shirts</h2>
       <div class="divider"></div>
-      <a href="https://www.kalvettu.in/shop/spiritual-t-shirts" class="view-all">Explore All</a>
+      <a href="#shop/spiritual-t-shirts" class="view-all">Explore All</a>
     </div>
 
     <!-- Gods -->
     <div class="grid-4 grid-4-sq">
-      <a href="https://www.kalvettu.in/shop/god-murugan-t-shirts" class="card">
+      <a href="#shop/god-murugan-t-shirts" class="card">
         <img src="https://cdn.picflow.com/assets/images/6480ba00-f8a3-4263-bd8f-b7392a2c35ed/base/6480ba00-f8a3-4263-bd8f-b7392a2c35ed.jpg" alt="Murugan T-Shirts" loading="lazy">
         <div class="card-label-gold">Murugan</div>
       </a>
-      <a href="https://www.kalvettu.in/shop/god-sivan-t-shirts" class="card">
+      <a href="#shop/god-sivan-t-shirts" class="card">
         <img src="https://cdn.picflow.com/assets/images/2d706012-58a3-4e3b-8dd5-6834b812c7e7/base/2d706012-58a3-4e3b-8dd5-6834b812c7e7.jpg" alt="Sivan T-Shirts" loading="lazy">
         <div class="card-label-gold">Sivan</div>
       </a>
-      <a href="https://www.kalvettu.in/shop/god-pillaiyar-vinayagar-t-shirts" class="card">
+      <a href="#shop/god-pillaiyar-vinayagar-t-shirts" class="card">
         <img src="https://cdn.picflow.com/assets/images/c5ae619c-a18a-45a8-8ffd-a05e47ef8ad5/base/c5ae619c-a18a-45a8-8ffd-a05e47ef8ad5.jpg" alt="Vinayagar T-Shirts" loading="lazy">
         <div class="card-label-gold">Vinayagar</div>
       </a>
-      <a href="https://www.kalvettu.in/shop/god-ayyappan-t-shirts" class="card">
+      <a href="#shop/god-ayyappan-t-shirts" class="card">
         <img src="https://cdn.picflow.com/assets/images/c84f3243-de49-47e2-a639-83436a7c5b6a/base/c84f3243-de49-47e2-a639-83436a7c5b6a.jpg" alt="Ayyappan T-Shirts" loading="lazy">
         <div class="card-label-gold">Ayyappan</div>
       </a>
@@ -708,19 +733,19 @@
 
     <!-- Types -->
     <div class="grid-4 grid-4-land">
-      <a href="https://www.kalvettu.in/shop/spiritual-t-shirts" class="card">
+      <a href="#shop/spiritual-t-shirts" class="card">
         <img src="https://cdn.picflow.com/assets/images/86c08ea6-6ee1-4f1c-9938-f567337d7619/base/86c08ea6-6ee1-4f1c-9938-f567337d7619.jpg" alt="Spiritual Half Sleeve T-Shirts" loading="lazy">
         <div class="card-label">Half Sleeve</div>
       </a>
-      <a href="https://www.kalvettu.in/shop/spiritual-oversized-t-shirts" class="card">
+      <a href="#shop/spiritual-oversized-t-shirts" class="card">
         <img src="https://cdn.picflow.com/assets/images/45ad7c6b-f964-4282-9857-2609dcc9e0a1/base/45ad7c6b-f964-4282-9857-2609dcc9e0a1.jpg" alt="Spiritual Oversized T-Shirts" loading="lazy">
         <div class="card-label">Oversized</div>
       </a>
-      <a href="https://www.kalvettu.in/shop/spiritual-full-sleeve-t-shirts" class="card">
+      <a href="#shop/spiritual-full-sleeve-t-shirts" class="card">
         <img src="https://cdn.picflow.com/assets/images/78cd18cf-4d42-4d4f-a599-68007fcd7c35/base/78cd18cf-4d42-4d4f-a599-68007fcd7c35.jpg" alt="Spiritual Full Sleeve T-Shirts" loading="lazy">
         <div class="card-label">Full Sleeve</div>
       </a>
-      <a href="https://www.kalvettu.in/shop/spiritual-collar-t-shirts" class="card">
+      <a href="#shop/spiritual-collar-t-shirts" class="card">
         <img src="https://cdn.picflow.com/assets/images/c161081f-eeb5-4895-9225-f6a1b77b8db5/base/c161081f-eeb5-4895-9225-f6a1b77b8db5.jpg" alt="Spiritual Polo T-Shirts" loading="lazy">
         <div class="card-label">Polo / Collar</div>
       </a>
@@ -734,14 +759,14 @@
     <div class="section-head">
       <h2>Posters</h2>
       <div class="divider"></div>
-      <a href="https://www.kalvettu.in/shop/tamil-wall-posters-for-room" class="view-all">View All</a>
+      <a href="#shop/tamil-wall-posters-for-room" class="view-all">View All</a>
     </div>
     <div class="grid-2">
-      <a href="https://www.kalvettu.in/shop/tamil-wall-posters-for-room" class="card">
+      <a href="#shop/tamil-wall-posters-for-room" class="card">
         <img src="https://cdn.picflow.com/assets/images/13057a2a-3228-4b73-9973-2eb4f2c136a9/base/13057a2a-3228-4b73-9973-2eb4f2c136a9.jpg" alt="Tamil Posters" loading="lazy">
         <div class="card-label-center">Tamil Posters</div>
       </a>
-      <a href="https://www.kalvettu.in/shop/spiritual-wall-posters-for-room" class="card">
+      <a href="#shop/spiritual-wall-posters-for-room" class="card">
         <img src="https://cdn.picflow.com/assets/images/34562500-00dd-485c-94f4-34a6c5f437dd/base/34562500-00dd-485c-94f4-34a6c5f437dd.jpg" alt="Spiritual Posters" loading="lazy">
         <div class="card-label-center">Spiritual Posters</div>
       </a>
@@ -755,22 +780,22 @@
     <div class="section-head">
       <h2>Plain T-Shirts</h2>
       <div class="divider"></div>
-      <a href="https://www.kalvettu.in/shop/half-sleeve-t-shirts" class="view-all">View All</a>
+      <a href="#shop/half-sleeve-t-shirts" class="view-all">View All</a>
     </div>
     <div class="grid-4">
-      <a href="https://www.kalvettu.in/shop/half-sleeve-t-shirts" class="card">
+      <a href="#shop/half-sleeve-t-shirts" class="card">
         <img src="https://cdn.picflow.com/assets/images/resized/l960/5f9350d4-03ae-491b-a884-2f94acdca74d.jpg" alt="Plain Half Sleeve T-Shirts" loading="lazy">
         <div class="card-label">Half Sleeve</div>
       </a>
-      <a href="https://www.kalvettu.in/shop/oversized-t-shirts" class="card">
+      <a href="#shop/oversized-t-shirts" class="card">
         <img src="https://cdn.picflow.com/assets/images/resized/l960/3e57320b-de82-477f-88a9-39b98c7fdb62.jpg" alt="Oversized T-Shirts" loading="lazy">
         <div class="card-label">Oversized</div>
       </a>
-      <a href="https://www.kalvettu.in/shop/full-sleeve-t-shirts" class="card">
+      <a href="#shop/full-sleeve-t-shirts" class="card">
         <img src="https://cdn.picflow.com/assets/images/resized/l960/3f4fb982-b150-4c69-bccf-c46f2a0ab0e0.jpg" alt="Plain Full Sleeve T-Shirts" loading="lazy">
         <div class="card-label">Full Sleeve</div>
       </a>
-      <a href="https://www.kalvettu.in/shop/collar-t-shirts" class="card">
+      <a href="#shop/collar-t-shirts" class="card">
         <img src="https://cdn.picflow.com/assets/images/resized/l960/1771a414-6b65-44be-b14c-91e0ffa6dfbd.jpg" alt="Plain Polo T-Shirts" loading="lazy">
         <div class="card-label">Polo / Collar</div>
       </a>
@@ -784,9 +809,9 @@
     <div class="section-head">
       <h2>Couple T-Shirts</h2>
       <div class="divider"></div>
-      <a href="https://www.kalvettu.in/shop/tamil-couple-t-shirts" class="view-all">View All</a>
+      <a href="#shop/tamil-couple-t-shirts" class="view-all">View All</a>
     </div>
-    <a href="https://www.kalvettu.in/shop/tamil-couple-t-shirts" class="couple-card">
+    <a href="#shop/tamil-couple-t-shirts" class="couple-card">
       <img src="https://cdn.picflow.com/assets/images/af3754a8-d968-4f97-b3d2-4f542dcdedfb/base/af3754a8-d968-4f97-b3d2-4f542dcdedfb.jpg" alt="Tamil Couple T-Shirts" loading="lazy">
       <div class="card-label-center">Shop Couple T-Shirts →</div>
     </a>
@@ -799,18 +824,18 @@
     <div class="section-head">
       <h2>Shop By Fandom</h2>
       <div class="divider"></div>
-      <a href="https://www.kalvettu.in/shop/superstar-rajinikanth-t-shirts" class="view-all">View All</a>
+      <a href="#shop/superstar-rajinikanth-t-shirts" class="view-all">View All</a>
     </div>
     <div class="grid-3">
-      <a href="https://www.kalvettu.in/shop/superstar-rajinikanth-t-shirts" class="card">
+      <a href="#shop/superstar-rajinikanth-t-shirts" class="card">
         <img src="https://cdn.picflow.com/assets/images/resized/l960/6f5bfc52-3d39-4f86-8d21-1669aff08625.jpg" alt="Rajinikanth T-Shirts" loading="lazy">
         <div class="card-label">Rajinikanth</div>
       </a>
-      <a href="https://www.kalvettu.in/shop/thalapathy-vijay-t-shirts" class="card">
+      <a href="#shop/thalapathy-vijay-t-shirts" class="card">
         <img src="https://cdn.picflow.com/assets/images/resized/l960/ca636122-87f5-47ee-ad6b-ee4da19fe617.jpg" alt="Thalapathy Vijay T-Shirts" loading="lazy">
         <div class="card-label">Thalapathy Vijay</div>
       </a>
-      <a href="https://www.kalvettu.in/shop/thala-ajith-kumar-t-shirts" class="card">
+      <a href="#shop/thala-ajith-kumar-t-shirts" class="card">
         <img src="https://cdn.picflow.com/assets/images/resized/l960/173ad967-74f3-4f14-ae5e-70aae653f490.jpg" alt="Thala Ajith T-Shirts" loading="lazy">
         <div class="card-label">Thala Ajith</div>
       </a>
@@ -824,18 +849,18 @@
     <div class="section-head">
       <h2>Shop By Leaders</h2>
       <div class="divider"></div>
-      <a href="https://www.kalvettu.in/shop/apj-abdul-kalam-t-shirts" class="view-all">View All</a>
+      <a href="#shop/apj-abdul-kalam-t-shirts" class="view-all">View All</a>
     </div>
     <div class="grid-3">
-      <a href="https://www.kalvettu.in/shop/apj-abdul-kalam-t-shirts" class="card">
+      <a href="#shop/apj-abdul-kalam-t-shirts" class="card">
         <img src="https://cdn.picflow.com/assets/images/resized/l960/2d29e409-9ab3-4a3e-aebf-45b0860d1780.jpg" alt="Abdul Kalam T-Shirts" loading="lazy">
         <div class="card-label">Abdul Kalam</div>
       </a>
-      <a href="https://www.kalvettu.in/shop/ambedkar-t-shirts" class="card">
+      <a href="#shop/ambedkar-t-shirts" class="card">
         <img src="https://cdn.picflow.com/assets/images/resized/l960/70aca27f-7d53-40cb-b0e7-7e8b40b4a99b.jpg" alt="Ambedkar T-Shirts" loading="lazy">
         <div class="card-label">Ambedkar</div>
       </a>
-      <a href="https://www.kalvettu.in/shop/periyar-t-shirts" class="card">
+      <a href="#shop/periyar-t-shirts" class="card">
         <img src="https://cdn.picflow.com/assets/images/resized/l960/5a47e8a5-a1b9-4d65-a4b4-d8f5b60e3c84.jpg" alt="Periyar T-Shirts" loading="lazy">
         <div class="card-label">Periyar</div>
       </a>
@@ -864,26 +889,27 @@
       </div>
       <div class="footer-col">
         <h5>Shop</h5>
-        <a href="https://www.kalvettu.in/shop/new-arrivals">New Arrivals</a>
-        <a href="https://www.kalvettu.in/shop/tamil-printed-t-shirts">Tamil T-Shirts</a>
-        <a href="https://www.kalvettu.in/shop/spiritual-t-shirts">Spiritual T-Shirts</a>
-        <a href="https://www.kalvettu.in/shop/tamil-wall-posters-for-room">Posters</a>
-        <a href="https://www.kalvettu.in/shop/half-sleeve-t-shirts">Plain T-Shirts</a>
-        <a href="https://www.kalvettu.in/shop/tamil-couple-t-shirts">Couple T-Shirts</a>
+        <a href="#shop/new-arrivals">New Arrivals</a>
+        <a href="#shop/tamil-printed-t-shirts">Tamil T-Shirts</a>
+        <a href="#shop/spiritual-t-shirts">Spiritual T-Shirts</a>
+        <a href="#shop/tamil-wall-posters-for-room">Posters</a>
+        <a href="#shop/half-sleeve-t-shirts">Plain T-Shirts</a>
+        <a href="#shop/tamil-couple-t-shirts">Couple T-Shirts</a>
       </div>
       <div class="footer-col">
         <h5>Company</h5>
-        <a href="https://www.kalvettu.in/about-us">About Us</a>
-        <a href="https://www.kalvettu.in/privacy-policy">Privacy Policy</a>
-        <a href="https://www.kalvettu.in/returns-refund-policy">Return &amp; Refund Policy</a>
-        <a href="https://www.kalvettu.in/disclaimer-policy">Disclaimer Policy</a>
-        <a href="https://www.kalvettu.in/terms-conditions">Terms and Conditions</a>
+        <a href="#about-us">About Us</a>
+        <a href="#privacy-policy">Privacy Policy</a>
+        <a href="#returns-refund-policy">Return &amp; Refund Policy</a>
+        <a href="#disclaimer-policy">Disclaimer Policy</a>
+        <a href="#terms-conditions">Terms and Conditions</a>
       </div>
       <div class="footer-col">
         <h5>Contact</h5>
-        <a href="https://www.kalvettu.in/">kalvettu.in</a>
-        <a href="https://www.kalvettu.in/account">My Account</a>
-        <a href="https://www.kalvettu.in/cart">Cart</a>
+        <a href="tel:+916374338510">📞 63743 38510</a>
+        <a href="tel:+919360689035">📞 93606 89035</a>
+        <a href="mailto:Triweave35@gmail.com">✉️ Triweave35@gmail.com</a>
+        <a href="#">📍 2nd Street, Balakrishnapuram, Adampakkam, Chennai, Tamilnadu - 600088, India</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -896,19 +922,19 @@
 <!-- ═══ MOBILE BOTTOM NAV ═══ -->
 <nav class="mobile-bar">
   <div class="mobile-bar-inner">
-    <a href="https://www.kalvettu.in/" class="active">
+    <a href="#" class="active">
       <span class="mico">🏠</span>Home
     </a>
-    <a href="https://www.kalvettu.in/shop/new-arrivals">
+    <a href="#shop/new-arrivals">
       <span class="mico">✨</span>New
     </a>
-    <a href="https://www.kalvettu.in/shop/tamil-printed-t-shirts">
+    <a href="#shop/tamil-printed-t-shirts">
       <span class="mico">📂</span>Category
     </a>
-    <a href="https://www.kalvettu.in/cart">
+    <a href="#cart">
       <span class="mico">🛒</span>Cart
     </a>
-    <a href="https://www.kalvettu.in/account">
+    <a href="#account">
       <span class="mico">👤</span>Account
     </a>
   </div>
